@@ -16,15 +16,15 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route path="/" element={<landingPage />} />
-      <Route path="/about" element={<about />} />
+      <Route path="about" element={<about />} />
+      <Route path="portfolio" element={<portfolio />} />
+      <Route path="quote" element={<quote />} />
     </Route>
   )
 )
 
 function App() {
-  return (
-    <div>placeholder</div>
-  );
+  return <RouterProvider router={router} />
 }
 
 export default App;
