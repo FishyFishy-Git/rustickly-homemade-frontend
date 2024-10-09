@@ -1,7 +1,7 @@
-import './App.css'; 
 import React from "react";
+import '../App.css'; 
 
-function portfolio() {
+function qoute() {
     return(
         <div>
             <h1>PLACE HOLDER DIV AND H1</h1>
@@ -9,4 +9,4 @@ function portfolio() {
     );
 };
 
-export default portfolio;
+export default qoute;
