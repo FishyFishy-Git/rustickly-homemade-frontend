@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css'; 
 
-function about() {
+function About() {
     return(
         <div>
             <h1>PLACE HOLDER DIV AND H1</h1>
@@ -9,4 +9,4 @@ function about() {
     );
 };
 
-export default about;
+export default About;

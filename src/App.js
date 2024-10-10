@@ -7,18 +7,19 @@ import {
 } from "react-router-dom"
 
 //import pages
-import landingPage from "./pages/landingPage"
-import about from './pages/about'
-import portfolio from './pages/portfolio';
-import quote from "./pages/qoute"
+// import AppLayout from './layouts/AppLayout';
+import LandingPage from './pages/LandingPage'
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
+import Quote from './pages/Quote'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
-      <Route path="/" element={<landingPage />} />
-      <Route path="about" element={<about />} />
-      <Route path="portfolio" element={<portfolio />} />
-      <Route path="quote" element={<quote />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="about" element={<About />} />
+      <Route path="portfolio" element={<Portfolio />} />
+      <Route path="quote" element={<Quote />} />
     </Route>
   )
 )

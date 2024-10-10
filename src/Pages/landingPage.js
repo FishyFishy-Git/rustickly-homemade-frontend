@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css'
 
-function landingPage() {
+function LandingPage() {
     return(
         <div className='main-container'>
         <div className='navigation-bar'>
@@ -29,4 +29,4 @@ function landingPage() {
     );
 };
 
-export default landingPage;
+export default LandingPage;
