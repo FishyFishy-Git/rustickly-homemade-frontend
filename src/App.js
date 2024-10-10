@@ -1,10 +1,31 @@
 import './App.css';
-import React from 'react';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from "react-router-dom"
+
+//import pages
+// import AppLayout from './layouts/AppLayout';
+import LandingPage from './pages/LandingPage'
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
+import Quote from './pages/Quote'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route path="/" element={<LandingPage />} />
+      <Route path="about" element={<About />} />
+      <Route path="portfolio" element={<Portfolio />} />
+      <Route path="quote" element={<Quote />} />
+    </Route>
+  )
+)
 
 function App() {
-  return (
-    <div>placeholder</div>
-  );
+  return <RouterProvider router={router} />
 }
 
 export default App;
