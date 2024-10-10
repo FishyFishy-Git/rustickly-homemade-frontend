@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-function appLayout() {
+function AppLayout() {
   return (
     <>
       <header>
@@ -17,4 +17,4 @@ function appLayout() {
   );
 }
 
-export default appLayout;
+export default AppLayout;
