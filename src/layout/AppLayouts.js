@@ -5,7 +5,7 @@ function AppLayout() {
     <>
       <header>
         <h4>
-          <NavLink>Hompage</NavLink>
+          <NavLink>LandingPage</NavLink>
           <NavLink>Portfolio</NavLink>
           <NavLink>Quotes</NavLink>
           <NavLink>About Us</NavLink>
