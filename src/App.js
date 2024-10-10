@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 
 //import pages
-import AppLayout from './layout/AppLayout';
+import AppLayout from './layout/AppLayouts';
 import LandingPage from './pages/LandingPage'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
@@ -16,7 +16,7 @@ import Login from './pages/Login';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={AppLayout}>
+    <Route path="/" element={<AppLayout />}>
       <Route path="/" element={<LandingPage />} />
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
