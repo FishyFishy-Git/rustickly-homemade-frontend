@@ -10,8 +10,8 @@ function Login() {
     const handleToken = (data) => {
         if (data.token) {
             // TODO: cookies!
-            const newUser = data.user
-            newUser.token = data.token
+            const user = data.user
+            user.token = data.token
             console.log(data)
         } else {
             console.log(data.message);
@@ -24,8 +24,6 @@ function Login() {
         if (!email || !password) {
             setErrorMessage("Please enter valid email or password")
         } else {
-            //TEST-LOG
-            console.log(`login hit | u: ${email} p: ${password}`);
             // POST fetch from login endpoint
             fetch('http://localhost:4000/api/login', {
                 method: "POST",
@@ -36,6 +34,7 @@ function Login() {
                 .then((res) => res.json())
                 // pass data to handle token
                 .then((data) => handleToken(data))
+                // post error message in colsole and on site
                 .catch((err) => {
                     console.warn(err)
                     setErrorMessage("Server error, please try again.")

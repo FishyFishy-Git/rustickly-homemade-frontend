@@ -13,18 +13,21 @@ import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import Quote from './pages/Quote'
 import Login from './pages/Login';
+import AdminLayout from './layout/AdminLayout';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    <>
     <Route path="/" element={<AppLayout />}>
       <Route path="/" element={<LandingPage />} />
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="quote" element={<Quote />} />
-      <Route path="admin">
-        <Route path="login" element={<Login />} />
-      </Route>
     </Route>
+    <Route path="admin" element={<AdminLayout />}>
+      <Route path="login" element={<Login />} />
+    </Route>
+    </>
   )
 )
 
