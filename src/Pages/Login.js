@@ -4,7 +4,7 @@ import { useState } from 'react'
 function Login() {
     // set useState variables
     const [errorMessage, setErrorMessage] = useState("")
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const handleToken = (data) => {
@@ -14,21 +14,22 @@ function Login() {
             newUser.token = data.token
             console.log(data)
         } else {
+            console.log(data.message);
             setErrorMessage(data.message)
         }
     }
 
     const handleLogin = () => {
         // set errormessage if username or password are empty 
-        if (!username || !password) {
-            setErrorMessage("Please enter valid username or password")
+        if (!email || !password) {
+            setErrorMessage("Please enter valid email or password")
         } else {
             //TEST-LOG
-            console.log(`login hit | u: ${username} p: ${password}`);
+            console.log(`login hit | u: ${email} p: ${password}`);
             // POST fetch from login endpoint
-            fetch('localhost:4000/login', {
+            fetch('http://localhost:4000/api/login', {
                 method: "POST",
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ email, password }),
                 headers: { "Content-Type": "application/json" },
             })
                 // turn to json
@@ -37,7 +38,7 @@ function Login() {
                 .then((data) => handleToken(data))
                 .catch((err) => {
                     console.warn(err)
-                    setErrorMessage("Server error, please try again")
+                    setErrorMessage("Server error, please try again.")
                 })
         }
     }
@@ -45,9 +46,9 @@ function Login() {
     return (<>
         <main>
             <div className="auth-inputs">
-                <div className="username">
-                    <label htmlFor="username-input" className="input-text">Username:</label>
-                    <input type="text" placeholder="username" id="username-input" onChange={e => setUsername(e.target.value)} />
+                <div className="email">
+                    <label htmlFor="email-input" className="input-text">Email:</label>
+                    <input type="text" placeholder="email" id="email-input" onChange={e => setEmail(e.target.value)} />
                 </div>
                 <div className="password">
                     <label htmlFor="password-input" className="input-text">Password:</label>
