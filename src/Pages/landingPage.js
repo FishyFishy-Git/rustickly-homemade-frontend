@@ -1,14 +1,22 @@
 import React from "react";
-import '../App.css'
+import logo from '../assests/Rustickly_2.png'
+import '../layout/landingPage.css'
+import { NavLink, Outlet } from "react-router-dom";
 
 function LandingPage() {
     return(
         <div className='main-container'>
         <div className='navigation-bar'>
-          <img src="assests/Rustickly_2.png" alt="logo for the business Rustickly homemade bakery" />
-          <p id='portfolio'></p>
-          <p id='qoute'></p>
-          <p id='about-us'></p>
+          <section>
+            <img id="logo" src={logo} alt="logo of the bakery Rustickly home made" />
+          </section>
+            <div id="navlinksLP">
+              <p className="linksLP" id='portfolio'><NavLink>Portfolio</NavLink></p>
+              <hr />
+              <p className="linksLP" id='about-us'><NavLink>About</NavLink></p>
+              <hr />
+              <p className="linksLP" id='qoute'><NavLink>Request a quote!</NavLink></p>
+            </div>
         </div>
   
         <div className='logo-header'>
@@ -24,7 +32,7 @@ function LandingPage() {
   
           </div>
         </div>
-  
+        <Outlet />
       </div>
     );
 };
