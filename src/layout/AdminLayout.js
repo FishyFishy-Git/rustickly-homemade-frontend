@@ -1,11 +1,12 @@
-import { NavLink, Outlet } from "react-router-dom";
+import "./adminLayout.css"
+import { NavLink, Outlet } from "react-router-dom"
 
 function AdminLayout() {
     return (<>
         <header>
             <NavLink>Portfolio</NavLink>
             <NavLink>About</NavLink>
-            <NavLink>Logout</NavLink>
+            <NavLink id="logout">Logout</NavLink>
         </header>
         <Outlet />
     </>)

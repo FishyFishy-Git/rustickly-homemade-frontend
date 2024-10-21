@@ -9,18 +9,27 @@ function Login() {
 
     const handleToken = (data) => {
         if (data.token) {
-            // TODO: cookies!
+            // create user variable
             const user = data.user
+            // add token to user
             user.token = data.token
+            
+            // set cookie to store token (or would it be better to store all data)
+
+            //TEST LOG
             console.log(data)
         } else {
-            console.log(data.message);
+            //TEST LOG
+            console.log(data.message)
+            // empty password field
+            document.getElementById("password-input").value = ""
+            // display error message for user
             setErrorMessage(data.message)
         }
     }
 
     const handleLogin = () => {
-        // set errormessage if username or password are empty 
+        // set error message if username or password are empty 
         if (!email || !password) {
             setErrorMessage("Please enter valid email or password")
         } else {
@@ -34,7 +43,7 @@ function Login() {
                 .then((res) => res.json())
                 // pass data to handle token
                 .then((data) => handleToken(data))
-                // post error message in colsole and on site
+                // post error message in console and on site
                 .catch((err) => {
                     console.warn(err)
                     setErrorMessage("Server error, please try again.")
@@ -42,22 +51,20 @@ function Login() {
         }
     }
 
-    return (<>
-        <main>
-            <div className="auth-inputs">
-                <div className="email">
-                    <label htmlFor="email-input" className="input-text">Email:</label>
-                    <input type="text" placeholder="email" id="email-input" onChange={e => setEmail(e.target.value)} />
-                </div>
-                <div className="password">
-                    <label htmlFor="password-input" className="input-text">Password:</label>
-                    <input type="text" placeholder="password" id="password-input" onChange={e => setPassword(e.target.value)} />
-                </div>
-                <button className="auth-button" onClick={handleLogin}>Log In</button>
-                <p className="authWarning">{errorMessage}</p>
+    return (<main>
+        <div className="auth-inputs">
+            <div className="email">
+                <label htmlFor="email-input" className="input-text">Email:</label>
+                <input type="text" placeholder="email" id="email-input" onChange={e => setEmail(e.target.value)} />
             </div>
-        </main>
-    </>)
+            <div className="password">
+                <label htmlFor="password-input" className="input-text">Password:</label>
+                <input type="password" placeholder="password" id="password-input" onChange={e => setPassword(e.target.value)} />
+            </div>
+            <button className="auth-button" onClick={handleLogin}>Log In</button>
+            <p className="auth-warning">{errorMessage}</p>
+        </div>
+    </main>)
 }
 
 export default Login
