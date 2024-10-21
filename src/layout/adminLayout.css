@@ -4,8 +4,11 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    height: 5vh;
+    height: 10vh;
     padding: 0 20px;
     border: 1px solid black;
 }
 
+img {
+    height: 9vh;
+}
