@@ -14,6 +14,7 @@ import Portfolio from './pages/Portfolio'
 import Quote from './pages/Quote'
 import Login from './pages/Login';
 import AdminLayout from './layout/AdminLayout';
+import Admin from './pages/Admin';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="quote" element={<Quote />} />
     </Route>
     <Route path="admin" element={<AdminLayout />}>
+      <Route path="/admin" element={<Admin />} />
       <Route path="login" element={<Login />} />
     </Route>
     </>

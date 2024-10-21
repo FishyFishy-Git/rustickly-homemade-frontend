@@ -1,11 +1,13 @@
 import './login.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
     // set useState variables
     const [errorMessage, setErrorMessage] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const nav = useNavigate()
 
     const handleToken = (data) => {
         if (data.token) {
@@ -13,11 +15,13 @@ function Login() {
             const user = data.user
             // add token to user
             user.token = data.token
-            
             // set cookie to store token (or would it be better to store all data)
 
             //TEST LOG
             console.log(data)
+
+            // navigate to admin page
+            nav("/admin")
         } else {
             //TEST LOG
             console.log(data.message)
