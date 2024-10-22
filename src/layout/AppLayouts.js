@@ -4,7 +4,7 @@ function AppLayout() {
   return (
     <>
       <header>
-        <h4>
+        <h4 className="originNav">
           <NavLink>LandingPage</NavLink>
           <NavLink>Portfolio</NavLink>
           <NavLink>Quotes</NavLink>
