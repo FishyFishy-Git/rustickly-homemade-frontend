@@ -2,7 +2,7 @@ import './login.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Login() {
+function AdminLogin() {
     // set useState variables
     const [errorMessage, setErrorMessage] = useState("")
     const [email, setEmail] = useState("")
@@ -71,4 +71,4 @@ function Login() {
     </main>)
 }
 
-export default Login
+export default AdminLogin

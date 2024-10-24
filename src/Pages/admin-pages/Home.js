@@ -1,8 +1,8 @@
 
-function Admin() {
+function AdminHome() {
     return(<div>
         <h1>Admin homepage - will be empty</h1>
     </div>)
 }
 
-export default Admin
+export default AdminHome

@@ -6,15 +6,17 @@ import {
   RouterProvider
 } from "react-router-dom"
 
-//import pages
+// import pages
 import AppLayout from './layout/AppLayouts';
 import LandingPage from './pages/LandingPage'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import Quote from './pages/Quote'
-import Login from './pages/Login';
+import AdminLogin from './pages/admin-pages/Login';
 import AdminLayout from './layout/AdminLayout';
-import Admin from './pages/Admin';
+import AdminHome from './pages/admin-pages/Home';
+import AdminPortfolio from './pages/admin-pages/Portfolio';
+import AdminAbout from './pages/admin-pages/About';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,8 +28,10 @@ const router = createBrowserRouter(
       <Route path="quote" element={<Quote />} />
     </Route>
     <Route path="admin" element={<AdminLayout />}>
-      <Route path="/admin" element={<Admin />} />
-      <Route path="login" element={<Login />} />
+      <Route path="/admin" element={<AdminHome />} />
+      <Route path="login" element={<AdminLogin />} />
+      <Route path="portfolio" element={<AdminPortfolio />} />
+      <Route path="about" element={<AdminAbout />} />
     </Route>
     </>
   )
