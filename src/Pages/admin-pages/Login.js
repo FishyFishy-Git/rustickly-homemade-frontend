@@ -59,11 +59,30 @@ function AdminLogin() {
         <div className="auth-inputs">
             <div className="email">
                 <label htmlFor="email-input" className="input-text">Email:</label>
-                <input type="text" placeholder="email" id="email-input" className="bubble" onChange={e => setEmail(e.target.value)} />
+                <input
+                    type="text"
+                    placeholder="email"
+                    id="email-input"
+                    className="bubble"
+                    onChange={e => setEmail(e.target.value)}
+                />
             </div>
             <div className="password">
                 <label htmlFor="password-input" className="input-text">Password:</label>
-                <input type="password" placeholder="password" id="password-input" className="bubble" onChange={e => setPassword(e.target.value)} />
+                <input
+                    type="password"
+                    placeholder="password"
+                    id="password-input"
+                    className="bubble"
+                    onChange={e => {
+                        console.log(e.target.key)
+                        if (e.key === 'Enter') {
+                            console.log('Enter pressed')
+                        } else {
+                            setPassword(e.target.value)
+                        }
+                    }}
+                />
             </div>
             <button className="auth-button bubble" onClick={handleLogin}>Log In</button>
             <p className="auth-warning">{errorMessage}</p>
