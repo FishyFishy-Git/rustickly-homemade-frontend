@@ -1,12 +1,13 @@
 import React from "react";
-import '../App.css'; 
+import QuoteHandler from "../components/quoteHandler";
+import "../layout/landingPage.css";
 
-function Qoute() {
-    return(
-        <div>
-            <h1>PLACE HOLDER DIV AND H1</h1>
-        </div>
-    );
-};
+function Quote() {
+  return (
+    <div>
+      <QuoteHandler></QuoteHandler>
+    </div>
+  );
+}
 
-export default Qoute;
+export default Quote;

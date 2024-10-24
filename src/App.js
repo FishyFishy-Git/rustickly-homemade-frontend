@@ -1,10 +1,10 @@
-import './App.css';
+import "./App.css";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider
-} from "react-router-dom"
+  RouterProvider,
+} from "react-router-dom";
 
 // import pages
 import AppLayout from './layout/AppLayouts';
@@ -35,10 +35,10 @@ const router = createBrowserRouter(
     </Route>
     </>
   )
-)
+);
 
 function App() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
 export default App;
