@@ -4,7 +4,7 @@ import logo from '../assests/Rustickly_2.png'
 
 function AdminLayout() {
     return (<>
-        <header>
+        <header className="admin-header">
             <section >
                 <img src={logo} alt="Rustickly Homemade's logo" id="logo" />
             </section>            

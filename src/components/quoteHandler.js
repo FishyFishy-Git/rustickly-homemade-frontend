@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import "../Pages/quote.css";
+import "../pages/quote.css";
 import "../layout/landingPage.css";
 
 function QuoteHandler() {
@@ -67,7 +67,7 @@ function QuoteHandler() {
   return (
     <div className="form-container">
       <h2></h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="quote-form">
         <input
           type="text"
           name="name"

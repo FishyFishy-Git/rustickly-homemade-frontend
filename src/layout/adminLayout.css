@@ -1,4 +1,4 @@
-header {
+.admin-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,6 +9,3 @@ header {
     border: 1px solid black;
 }
 
-img {
-    height: 9vh;
-}

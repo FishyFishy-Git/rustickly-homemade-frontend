@@ -3,7 +3,7 @@ html {
     
 }
 
-main {
+.admin-main {
     display: flex;
     justify-content: center;
 

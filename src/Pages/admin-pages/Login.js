@@ -55,7 +55,7 @@ function AdminLogin() {
         }
     }
 
-    return (<main>
+    return (<main className="admin-main">
         <div className="auth-inputs">
             <div className="email">
                 <label htmlFor="email-input" className="input-text">Email:</label>
@@ -63,7 +63,7 @@ function AdminLogin() {
                     type="text"
                     placeholder="email"
                     id="email-input"
-                    className="bubble"
+                    // className="bubble"
                     onChange={e => setEmail(e.target.value)}
                 />
             </div>
@@ -73,7 +73,7 @@ function AdminLogin() {
                     type="password"
                     placeholder="password"
                     id="password-input"
-                    className="bubble"
+                    // className="bubble"
                     onChange={e => {
                         console.log(e.target.key)
                         if (e.key === 'Enter') {
