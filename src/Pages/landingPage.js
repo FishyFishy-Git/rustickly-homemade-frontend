@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../assests/Rustickly_2.png'
 import '../layout/landingPage.css'
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function LandingPage() {
     return(
