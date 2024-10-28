@@ -15,10 +15,9 @@ function AdminLogin() {
             const user = data.user
             // add token to user
             user.token = data.token
+            
             // set cookie to store token (or would it be better to store all data)
-
-            //TEST LOG
-            console.log(data)
+            // add userContext to set
 
             // navigate to admin page
             nav("/admin")
@@ -36,6 +35,7 @@ function AdminLogin() {
         // set error message if username or password are empty 
         if (!email || !password) {
             setErrorMessage("Please enter valid email or password")
+            document.getElementById("password-input").value = ""
         } else {
             // POST fetch from login endpoint
             fetch('http://localhost:4000/api/login', {
@@ -50,6 +50,7 @@ function AdminLogin() {
                 // post error message in console and on site
                 .catch((err) => {
                     console.warn(err)
+                    document.getElementById("password-input").value = ""
                     setErrorMessage("Server error, please try again.")
                 })
         }
@@ -63,7 +64,7 @@ function AdminLogin() {
                     type="text"
                     placeholder="email"
                     id="email-input"
-                    // className="bubble"
+                    className="bubble"
                     onChange={e => setEmail(e.target.value)}
                 />
             </div>
@@ -73,15 +74,9 @@ function AdminLogin() {
                     type="password"
                     placeholder="password"
                     id="password-input"
-                    // className="bubble"
-                    onChange={e => {
-                        console.log(e.target.key)
-                        if (e.key === 'Enter') {
-                            console.log('Enter pressed')
-                        } else {
-                            setPassword(e.target.value)
-                        }
-                    }}
+                    className="bubble"
+                    onChange={e => {setPassword(e.target.value)}}
+                    onKeyDown={e => {if (e.key === "Enter") handleLogin() }}
                 />
             </div>
             <button className="auth-button bubble" onClick={handleLogin}>Log In</button>
