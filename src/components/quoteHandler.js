@@ -1,18 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import "../Pages/quote.css";
-import "../layout/landingPage.css";
+import "./quoteHandler.css";
 
 function QuoteHandler() {
   const [formData, setFormData] = useState({
+    //holds feild information
     name: "",
     email: "",
     date: "",
     request: "",
   });
 
-  const [minDate, setMinDate] = useState("");
+  const [minDate, setMinDate] = useState(""); //holds min date
   //These three variables need to be changed to client information before launch
 
   const handleChange = (e) => {
@@ -24,11 +24,12 @@ function QuoteHandler() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceID = "service_fol8n8k";
+    const serviceID = "service_fol8n8k"; //IDs needed from emailjs
     const templateID = "template_wuvtnak";
     const PublicKey = "62gV_oghdNKKdlXsx";
 
     const templateParams = {
+      //holds all the params that will hold information to be sent in email
       from_name: formData.name,
       from_email: formData.email,
       to_name: "Subai",
@@ -37,13 +38,15 @@ function QuoteHandler() {
     };
 
     emailjs
-      .send(serviceID, templateID, templateParams, PublicKey)
+      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Subai
       .then((response) => {
         console.log("email sent", response);
-        setFormData.name("");
-        setFormData.email("");
-        setFormData.date("");
-        setFormData.request("");
+        setFormData({
+          name: "",
+          email: "",
+          date: "",
+          request: "",
+        }); // Reset the entire form
       })
       .catch((error) => {
         console.error("error sending email", error);
@@ -101,7 +104,9 @@ function QuoteHandler() {
           placeholder="Request"
           required
         />
-        <button type="submit">Submit Quote</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

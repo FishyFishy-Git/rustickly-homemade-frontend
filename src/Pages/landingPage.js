@@ -31,7 +31,9 @@ function LandingPage() {
 
       <div className="logo-header"></div>
 
-      <div className="content-block"></div>
+      <div className="content-block">
+        <Outlet />
+      </div>
 
       <div className="footer-block">
         <div id="facebook">
