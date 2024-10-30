@@ -2,6 +2,10 @@ import React from "react";
 import '../layout/about.css'; 
 import { NavLink } from "react-router-dom";
 import logo from '../assests/Rustickly_2.png'
+import Border from "../components/Border";
+import BorderTL from "../components/BorderTL";
+import BorderRB from "../components/BorderRB";
+import BorderLB from "../components/BorderLB";
 
 function About() {
     return(
@@ -20,6 +24,10 @@ function About() {
         </div>
 
             <div className="title-bar-about">
+              <Border></Border>
+              <BorderTL></BorderTL>
+              <BorderRB></BorderRB>
+              <BorderLB></BorderLB>
                 <h2 id="title-text">About me</h2>
             </div>
 

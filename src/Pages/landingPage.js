@@ -3,6 +3,7 @@ import logo from '../assests/Rustickly_2.png'
 import '../layout/landingPage.css'
 import { NavLink } from "react-router-dom";
 
+
 function LandingPage() {
     return(
         <div className='main-container'>

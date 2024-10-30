@@ -15,7 +15,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    height: 100vw;
+    height: 50vw;
 }
 
 .navigation-bar-about {
@@ -36,6 +36,7 @@
 
 .title-bar-about {
     display: flex;
+    position: relative;
     background-color: #E3D8B7;
     grid-column: 2/span 6;
     border-radius: 15px;
@@ -58,4 +59,38 @@
 #title-text {
     font-size: 3rem;
     text-align: center;
+}
+
+#about-us {
+    margin: 15px;
+}
+
+.iconTR {
+    position: absolute;
+    margin: 5px;
+    top: 0;
+    right: 0;
+}
+
+.iconTL {
+    display: none;
+    position: absolute;
+    margin: 5px;
+    top: 0;
+    left: 0;
+}
+
+.iconRB {
+    display: none;
+    position: absolute;
+    margin: 5px;
+    bottom: 0;
+    right: 0;  
+}
+
+.iconLB {
+    position: absolute;
+    margin: 5px;
+    bottom: 0;
+    left: 0;  
 }
