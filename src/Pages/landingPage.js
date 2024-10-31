@@ -46,7 +46,8 @@ function LandingPage() {
   
         </div>
       </div>
-    );
-};
+    </div>
+  );
+}
 
 export default LandingPage;
