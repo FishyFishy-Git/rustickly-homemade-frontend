@@ -12,11 +12,11 @@ import LandingPage from './pages/LandingPage'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import Quote from './pages/Quote'
-import AdminLogin from './pages/admin-pages/Login';
 import AdminLayout from './layout/AdminLayout';
-import AdminHome from './pages/admin-pages/Home';
-import AdminPortfolio from './pages/admin-pages/Portfolio';
-import AdminAbout from './pages/admin-pages/About';
+import AdminLogin from './pages/admin-pages/AdminLogin';
+import AdminHome from './pages/admin-pages/AdminHome';
+import AdminAbout from './pages/admin-pages/AdminAbout';
+import AdminPortfolio from './pages/admin-pages/AdminPortfolio';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

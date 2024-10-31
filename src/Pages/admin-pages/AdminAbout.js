@@ -1,6 +1,6 @@
 // import css
 
-import AdminHome from "./Home"
+import AdminHome from "./AdminHome"
 
 function AdminAbout() {
     return(<div>Admin About - TipTap integration</div>)
