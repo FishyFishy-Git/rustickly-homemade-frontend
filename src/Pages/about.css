@@ -3,7 +3,7 @@
     display: none;
    }
 
-   .main-Container-about {
+.main-Container-about {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
@@ -20,6 +20,10 @@
 
 .navigation-bar-about {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-width: 0;
     background-color: #E3D8B7;
     text-align: center;
     border: 5px solid #DACAA4;
@@ -46,10 +50,8 @@
 }
 
 #navlinksAbout {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .linksA {
@@ -65,32 +67,7 @@
     margin: 15px;
 }
 
-.iconTR {
-    position: absolute;
-    margin: 5px;
-    top: 0;
-    right: 0;
-}
-
-.iconTL {
-    display: none;
-    position: absolute;
-    margin: 5px;
-    top: 0;
-    left: 0;
-}
-
-.iconRB {
-    display: none;
-    position: absolute;
-    margin: 5px;
-    bottom: 0;
-    right: 0;  
-}
-
-.iconLB {
-    position: absolute;
-    margin: 5px;
-    bottom: 0;
-    left: 0;  
+.socials-about {
+display:flex;
+justify-content: center;
 }
