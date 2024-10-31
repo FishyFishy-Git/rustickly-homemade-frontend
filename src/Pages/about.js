@@ -2,10 +2,6 @@ import React from "react";
 import './about.css'; 
 import { NavLink } from "react-router-dom";
 import logo from '../assests/Rustickly_2.png'
-import Border from "../components/Border";
-import BorderTL from "../components/BorderTL";
-import BorderRB from "../components/BorderRB";
-import BorderLB from "../components/BorderLB";
 
 function About() {
     return(
@@ -17,9 +13,9 @@ function About() {
             <div id="navlinksAbout">
               <p className="linksA" id="home"><NavLink to="/">Home</NavLink></p>
               <hr />
-              <p className="linksA" id='portfolio'><NavLink to="portfolio">Portfolio</NavLink></p>
+              <p className="linksA" id='portfolio'><NavLink to="/portfolio">Portfolio</NavLink></p>
               <hr />
-              <p className="linksA" id='qoute'><NavLink to="qoute">Request a qoute!</NavLink></p>
+              <p className="linksA" id='qoute'><NavLink to="/qoute">Request a qoute!</NavLink></p>
             </div>
               <div className="socials-about">
                 <div id="facebook">
