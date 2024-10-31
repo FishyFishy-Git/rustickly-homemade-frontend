@@ -1,6 +1,8 @@
 /* this is the styling for the landing page */
-.originNav {
- display: none;
+
+
+header{
+    display: none;
 }
 
 #logo {
@@ -24,7 +26,7 @@ hr {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-gap: 20px;
-    background-color: black;
+    background-color: #003c70;
     margin-left: 30px;
     margin-right: 30px;
     padding-top: 20px;
@@ -40,9 +42,9 @@ hr {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
     position: relative;
-    background-color: #E3D8B7;
+    background-color: #feffe5;
     text-align: center;
-    border: 5px solid #DACAA4;
+    border: 5px solid #feffe5;
     border-radius: 15px;
     grid-row: 1 / span 6;
 }
@@ -87,7 +89,6 @@ a {
     justify-content: center;
     align-items: flex-end;
     grid-row: 6;
-    transform: translateY(25%);
     margin: 0;
     font-size: 1.3rem;
 }
@@ -96,7 +97,7 @@ a {
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: #E3D8B7;
+    background-color: #feffe5;
     grid-column: 2/span 6;
     border-radius: 15px;
 }
@@ -109,7 +110,7 @@ a {
 }
 
 .content-block {
-    background-color: #E3D8B7;
+    background-color: #feffe5;
     border-radius: 15px;
     grid-row: 2/span 5;
     grid-column: 2/span 6;
