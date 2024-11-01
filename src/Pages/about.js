@@ -15,7 +15,7 @@ function About() {
               <hr />
               <p className="linksA" id='portfolio'><NavLink to="/portfolio">Portfolio</NavLink></p>
               <hr />
-              <p className="linksA" id='qoute'><NavLink to="/qoute">Request a qoute!</NavLink></p>
+              <p className="linksA" id='qoute'><NavLink to="/quote">Request a quote!</NavLink></p>
             </div>
               <div className="socials-about">
                 <div id="facebook">
