@@ -1,0 +1,40 @@
+/* parent container for whole editor (menu / editor window / save&cancel buttons */
+.editor {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 85vh;
+    max-height: 85vh;
+    gap: .5rem;
+    background-color: blue;
+}
+
+/* menu bar */
+.button-group {
+    display: flex;
+    flex-flow: row wrap;
+    gap: .5rem;
+
+    padding: .5rem;
+    width: 95vw;
+}
+
+/* editor window */
+.tiptap {
+    background-color: beige;
+    /* border: 1px solid red; */
+    padding: .5rem;
+    width: 95vw;
+    height: 70vh;
+    /* max-height: 65vh; */
+    text-align: left;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.editor-title {
+    color: green;
+    text-align: center;
+    height: 5vh;
+
+}

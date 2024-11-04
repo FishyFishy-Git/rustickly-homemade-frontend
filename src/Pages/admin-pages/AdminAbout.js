@@ -1,9 +1,14 @@
 // import css
 
-import AdminHome from "./AdminHome"
+import EditorWindow from "../../components/EditorWindow"
 
 function AdminAbout() {
-    return(<div>Admin About - TipTap integration</div>)
+    return (
+        <div className="page-container">
+            <div className="editor-title">About Page Editor</div>
+            <EditorWindow />
+        </div>
+    )
 }
 
 export default AdminAbout

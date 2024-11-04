@@ -8,8 +8,9 @@ function AdminLayout() {
             <section >
                 <img src={logo} alt="Rustickly Homemade's logo" id="logo" />
             </section>            
-            <NavLink>Portfolio</NavLink>
-            <NavLink>About</NavLink>
+            <NavLink to='/admin/'>Home</NavLink>
+            <NavLink to='/admin/portfolio'>Portfolio</NavLink>
+            <NavLink to='/admin/about'>About</NavLink>
             <NavLink id="logout">Logout</NavLink>
         </header>
         <Outlet />
