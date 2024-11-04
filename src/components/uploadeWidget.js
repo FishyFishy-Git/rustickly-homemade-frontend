@@ -3,13 +3,15 @@ import { useRef, useEffect } from "react";
 export default function UploadWidget() {
   const cloudinaryRef = useRef();
   const widgetHandler = useRef();
+  const cloudName = process.env.REACT_APP_CLOUD_NAME;
+  const uploadPreset = process.env.REACT_APP_UPLOAD_PRESET;
 
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
     console.log(cloudinaryRef.current);
     widgetHandler.current = cloudinaryRef.current.createUploadWidget({
-      cloudName: "de2di2nn8",
-      uploadPreset: "yedtv9o7",
+      cloudName,
+      uploadPreset,
       sources: [
         "local", // Allow uploading from local files
         "url", // Allow uploading from a URL
@@ -17,6 +19,7 @@ export default function UploadWidget() {
         "google_drive", // Allow uploading from Google Drive
         "dropbox",
       ],
+      tags: "gallery",
     });
   }, []);
   return (
