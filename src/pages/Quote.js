@@ -1,5 +1,5 @@
 import React from "react";
-import QuoteHandler from "../components/quoteHandler";
+import QuoteHandler from "../components/QuoteHandler";
 import { NavLink } from "react-router-dom";
 import logo from "../assests/Rustickly_2.png";
 

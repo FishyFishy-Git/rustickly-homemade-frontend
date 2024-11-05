@@ -24,7 +24,7 @@ function LandingPage() {
           </p>
           <hr />
           <p className="linksLP" id="qoute">
-            <NavLink to="/quote">Request a qoute!</NavLink>
+            <NavLink to="/quote">Contact Us!</NavLink>
           </p>
         </div>
 
