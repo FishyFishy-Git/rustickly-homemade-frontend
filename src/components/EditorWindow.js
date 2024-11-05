@@ -42,8 +42,7 @@ function EditorWindow() {
             setLoadError(true)
         }
     }
-    
-    
+
     useEffect(() => {
         // set a 10 second timeout for the fetch request
         const contentLoader = setTimeout(() => {
@@ -92,30 +91,29 @@ function EditorWindow() {
 
     return (
         // load editor if content is fetch is successful
-        mount && (
+        (mount && (
             <div className="editor">
                 <EditorProvider
                     slotBefore={<EditorMenuBar />}
-                    slotAfter={<EditorChanges content={content} className="change-buttons"/>}
-                    // slotAfter={<SaveChanges />}
+                    slotAfter={<EditorChanges content={content} className="change-buttons" />}
                     extensions={extensions}
                     content={editorContent}
-                    // onUpdate={({editor}) => {
-                    //     const currContent = editor.getJSON()
-                    //     if (currContent.content === content.content) {
-                    //         console.log("the same")
-                    //     } else {
-                    //         console.log('content', content.content)
-                    //         console.log('currContent', currContent.content)
-                    //         console.log("different")
-                    //     }
-                    // }}
+                // onUpdate={({editor}) => {
+                //     const currContent = editor.getJSON()
+                //     if (currContent.content === content.content) {
+                //         console.log("the same")
+                //     } else {
+                //         console.log('content', content.content)
+                //         console.log('currContent', currContent.content)
+                //         console.log("different")
+                //     }
+                // }}
                 >
                 </EditorProvider>
             </div>
-        )
+        ))
         // load error message if server doesn't respond after 10 seconds
-        || loadError && (<div className="card">Error accessing server, please refresh.</div>)
+        || (loadError && (<div className="card">Error accessing server, please refresh.</div>))
         // loading message 
         || <div className="card">Loading editor...</div>
 
