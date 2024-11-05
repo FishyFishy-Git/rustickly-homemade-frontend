@@ -32,7 +32,7 @@ function QuoteHandler() {
       //holds all the params that will hold information to be sent in email
       from_name: formData.name,
       from_email: formData.email,
-      to_name: "Subai",
+      to_name: "Su Bai",
       date: formData.date,
       request: formData.request,
     };
@@ -72,6 +72,7 @@ function QuoteHandler() {
       <h2></h2>
       <form onSubmit={handleSubmit}>
         <input
+          className="quote-input"
           type="text"
           name="name"
           value={formData.name}
@@ -80,6 +81,7 @@ function QuoteHandler() {
           required
         />
         <input
+          className="quote-input"
           type="text"
           name="email"
           value={formData.email}
@@ -88,6 +90,7 @@ function QuoteHandler() {
           required
         />
         <input
+          className="quote-input"
           type="date"
           name="date"
           value={formData.date}
@@ -96,6 +99,7 @@ function QuoteHandler() {
           required
         />
         <textarea
+          className="quote-input"
           cols="30"
           rows="12"
           name="request"

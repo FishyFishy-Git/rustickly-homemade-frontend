@@ -11,7 +11,7 @@ import AppLayout from "./layout/AppLayouts";
 import LandingPage from "./Pages/landingPage";
 import About from "./Pages/about";
 import Portfolio from "./Pages/portfolio";
-import Quote from "./Pages/quote";
+import Quote from "./Pages/Quote";
 import Login from "./Pages/login";
 import AdminLayout from "./layout/AdminLayout";
 import Admin from "./Pages/admin";
