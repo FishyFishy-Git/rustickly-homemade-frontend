@@ -3,8 +3,8 @@ import EditorWindow from '../../components/EditorWindow'
 
 function AdminAbout() {
     return (
-        <div>
-            <h2 className="editor-title">About Editor</h2>
+        <div className="content-container">
+            <div className="editor-title">About Editor</div>
             <EditorWindow />
         </div>
     )

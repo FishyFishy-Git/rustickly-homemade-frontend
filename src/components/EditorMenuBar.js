@@ -7,7 +7,7 @@ function EditorMenuBar() {
     if (!editor) { return null }
 
     return (
-        <div className="button-group">
+        <div className="format-buttons">
             {/* bold */}
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
@@ -90,7 +90,7 @@ function EditorMenuBar() {
                 Ordered list
             </button>
 
-            {/* horizonal line break */}
+            {/* horizontal line break */}
             <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
                 Horizontal rule
             </button>

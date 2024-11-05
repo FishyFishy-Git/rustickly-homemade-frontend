@@ -41,7 +41,7 @@ function EditorChanges({ content }) {
         }
     }
 
-    return (<div>
+    return (<div className="change-buttons">
         <button onClick={handleCancel}>Cancel</button>
         <button onClick={handleSave}>Save</button>
 

@@ -70,7 +70,7 @@ function EditorWindow() {
             <div className="editor">
                 <EditorProvider
                     slotBefore={<EditorMenuBar />}
-                    slotAfter={<EditorChanges content={content} className="change-buttons" />}
+                    slotAfter={<EditorChanges content={content} />}
                     extensions={extensions}
                     content={editorContent}
                     onCreate={({ editor }) => {
@@ -95,9 +95,9 @@ function EditorWindow() {
             </div>
         ))
         // load error message if server doesn't respond after 10 seconds
-        || (loadError && (<div className="card">Error accessing server, please refresh.</div>))
+        || (loadError && (<div className="editor">Error accessing server, please refresh.</div>))
         // loading message 
-        || <div className="card">Loading editor...</div>
+        || <div className="editor">Loading editor...</div>
 
     )
 }
