@@ -1,18 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import "../pages/quote.css";
-import "../layout/landingPage.css";
+import "./quoteHandler.css";
 
 function QuoteHandler() {
   const [formData, setFormData] = useState({
+    //holds field information
     name: "",
     email: "",
     date: "",
     request: "",
   });
 
-  const [minDate, setMinDate] = useState("");
+  const [minDate, setMinDate] = useState(""); //holds min date
   //These three variables need to be changed to client information before launch
 
   const handleChange = (e) => {
@@ -24,26 +24,29 @@ function QuoteHandler() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceID = "service_fol8n8k";
+    const serviceID = "service_fol8n8k"; //IDs needed from emailjs
     const templateID = "template_wuvtnak";
     const PublicKey = "62gV_oghdNKKdlXsx";
 
     const templateParams = {
+      //holds all the params that will hold information to be sent in email
       from_name: formData.name,
       from_email: formData.email,
-      to_name: "Subai",
+      to_name: "Su Bai",
       date: formData.date,
       request: formData.request,
     };
 
     emailjs
-      .send(serviceID, templateID, templateParams, PublicKey)
+      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Su Bai
       .then((response) => {
         console.log("email sent", response);
-        setFormData.name("");
-        setFormData.email("");
-        setFormData.date("");
-        setFormData.request("");
+        setFormData({
+          name: "",
+          email: "",
+          date: "",
+          request: "",
+        }); // Reset the entire form
       })
       .catch((error) => {
         console.error("error sending email", error);
@@ -69,6 +72,7 @@ function QuoteHandler() {
       <h2></h2>
       <form onSubmit={handleSubmit} className="quote-form">
         <input
+          className="quote-input"
           type="text"
           name="name"
           value={formData.name}
@@ -77,6 +81,7 @@ function QuoteHandler() {
           required
         />
         <input
+          className="quote-input"
           type="text"
           name="email"
           value={formData.email}
@@ -85,6 +90,7 @@ function QuoteHandler() {
           required
         />
         <input
+          className="quote-input"
           type="date"
           name="date"
           value={formData.date}
@@ -93,6 +99,7 @@ function QuoteHandler() {
           required
         />
         <textarea
+          className="quote-input"
           cols="30"
           rows="12"
           name="request"
@@ -101,7 +108,9 @@ function QuoteHandler() {
           placeholder="Request"
           required
         />
-        <button type="submit">Submit Quote</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );
