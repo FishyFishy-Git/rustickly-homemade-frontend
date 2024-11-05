@@ -1,6 +1,6 @@
 import "./adminLayout.css"
 import { NavLink, Outlet } from "react-router-dom"
-import logo from '../assests/Rustickly_2.png'
+import logo from '../assets/Rustickly_2.png'
 
 function AdminLayout() {
     return (<>

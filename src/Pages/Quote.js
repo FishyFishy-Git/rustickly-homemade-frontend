@@ -1,7 +1,7 @@
 import React from "react";
 import QuoteHandler from "../components/QuoteHandler";
 import { NavLink } from "react-router-dom";
-import logo from "../assests/Rustickly_2.png";
+import logo from "../assets/Rustickly_2.png";
 
 function Quote() {
   return (

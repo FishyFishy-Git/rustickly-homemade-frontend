@@ -3,7 +3,7 @@ import './editorWindow.css'
 
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
-import { EditorProvider, useCurrentEditor } from '@tiptap/react'
+import { EditorProvider } from '@tiptap/react'
 import { useEffect, useState } from 'react'
 import EditorMenuBar from './EditorMenuBar'
 import EditorChanges from './EditorChanges'
@@ -64,30 +64,30 @@ function EditorWindow() {
 
     const editorContent = content
 
-    const SaveChanges = () => {
-        const { editor } = useCurrentEditor()
+    // const SaveChanges = () => {
+    //     const { editor } = useCurrentEditor()
 
-        if (!editor) { return null }
+    //     if (!editor) { return null }
 
-        const handleSave = () => {
-            console.log(editor.getJSON())
+    //     const handleSave = () => {
+    //         console.log(editor.getJSON())
 
-            // TODO: make the server that will handle this request
-            fetch('http://localhost:4000/api/editor/save', {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(editor.getJSON())
-            })
-                .then(res => res.json())
-                .then(data => console.log(data))
-                .catch(err => console.warn(err))
+    //         // TODO: make the server that will handle this request
+    //         fetch('http://localhost:4000/api/editor/save', {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify(editor.getJSON())
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => console.log(data))
+    //             .catch(err => console.warn(err))
 
-        }
+    //     }
 
-        return (
-            <button onClick={handleSave}>Save</button>
-        )
-    }
+    //     return (
+    //         <button onClick={handleSave}>Save</button>
+    //     )
+    // }
 
     return (
         // load editor if content is fetch is successful

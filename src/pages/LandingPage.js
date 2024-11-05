@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../assests/Rustickly_2.png";
-import "../layout/landingPage.css";
+import logo from "../assets/Rustickly_2.png";
+import "./landingPage.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 function LandingPage() {
