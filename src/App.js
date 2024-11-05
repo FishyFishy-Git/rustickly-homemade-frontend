@@ -8,13 +8,13 @@ import {
 
 //import pages
 import AppLayout from "./layout/AppLayouts";
-import LandingPage from "./Pages/landingPage";
-import About from "./Pages/about";
-import Portfolio from "./Pages/portfolio";
+import LandingPage from "./Pages/LandingPage";
+import About from "./Pages/About";
+import Portfolio from "./Pages/Portfolio";
 import Quote from "./Pages/Quote";
-import Login from "./Pages/login";
+import Login from "./Pages/Login";
 import AdminLayout from "./layout/AdminLayout";
-import Admin from "./Pages/admin";
+import Admin from "./Pages/Admin";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
