@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assests/Rustickly_2.png";
+import logo from "../assets/Rustickly_2.png";
 import "./landingPage.css";
 import { NavLink } from "react-router-dom";
 
