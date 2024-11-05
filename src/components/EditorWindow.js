@@ -3,7 +3,7 @@ import './editorWindow.css'
 
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
-import { EditorProvider } from '@tiptap/react'
+import { EditorProvider, useCurrentEditor } from '@tiptap/react'
 import { useEffect, useState } from 'react'
 import EditorMenuBar from './EditorMenuBar'
 import EditorChanges from './EditorChanges'
@@ -64,31 +64,6 @@ function EditorWindow() {
 
     const editorContent = content
 
-    // const SaveChanges = () => {
-    //     const { editor } = useCurrentEditor()
-
-    //     if (!editor) { return null }
-
-    //     const handleSave = () => {
-    //         console.log(editor.getJSON())
-
-    //         // TODO: make the server that will handle this request
-    //         fetch('http://localhost:4000/api/editor/save', {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify(editor.getJSON())
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => console.log(data))
-    //             .catch(err => console.warn(err))
-
-    //     }
-
-    //     return (
-    //         <button onClick={handleSave}>Save</button>
-    //     )
-    // }
-
     return (
         // load editor if content is fetch is successful
         (mount && (
@@ -98,16 +73,23 @@ function EditorWindow() {
                     slotAfter={<EditorChanges content={content} className="change-buttons" />}
                     extensions={extensions}
                     content={editorContent}
-                // onUpdate={({editor}) => {
-                //     const currContent = editor.getJSON()
-                //     if (currContent.content === content.content) {
-                //         console.log("the same")
-                //     } else {
-                //         console.log('content', content.content)
-                //         console.log('currContent', currContent.content)
-                //         console.log("different")
-                //     }
-                // }}
+                    onCreate={({ editor }) => {
+                        setContent(editor.getJSON())
+                        console.log('the test', editor.getJSON())
+                    }}
+                    onUpdate={({ editor }) => {
+                        const currContent = JSON.stringify(editor.getJSON().content)
+                        const origContent = JSON.stringify(content.content)
+                        if (currContent === origContent) {
+                            console.log("the same")
+                            // disable cancel and save buttons
+                        } else {
+                            console.log('content', content.content)
+                            console.log('currContent', currContent.content)
+                            console.log("different")
+                            // enable cancel and save buttons
+                        }
+                    }}
                 >
                 </EditorProvider>
             </div>
