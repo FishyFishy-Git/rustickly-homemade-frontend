@@ -1,0 +1,60 @@
+.admin-main {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 8vh;
+    width: 100vw;
+}
+
+.auth-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    width: 40vw;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 40vw;
+}
+
+.password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 40vw;
+}
+
+.input-text {
+    flex-grow: 2;
+    text-align: right;
+}
+
+.bubble {
+    border-radius: 15px;
+    border: 2px solid black;
+    font-size: .9rem;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.auth-button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.auth-warning {
+    color: darkred;
+}
