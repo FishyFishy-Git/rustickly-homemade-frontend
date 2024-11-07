@@ -1,5 +1,12 @@
 //imports
 import { useCurrentEditor } from '@tiptap/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faBold, faItalic, faUnderline,
+    faEraser, faParagraph,
+    faList, faListOl, faMinus,
+    faRotateBackward, faRotateForward
+} from '@fortawesome/free-solid-svg-icons'
 
 function EditorMenuBar() {
     const { editor } = useCurrentEditor()
@@ -7,93 +14,7 @@ function EditorMenuBar() {
     if (!editor) { return null }
 
     return (
-        <div className="format-buttons">
-            {/* bold */}
-            <button
-                onClick={() => editor.chain().focus().toggleBold().run()}
-                disabled={
-                    !editor.can()
-                        .chain()
-                        .focus()
-                        .toggleBold()
-                        .run()
-                }
-                className={editor.isActive('bold') ? 'is-active' : ''}
-            >
-                Bold
-            </button>
-            {/* italic */}
-            <button
-                onClick={() => editor.chain().focus().toggleItalic().run()}
-                disabled={
-                    !editor.can()
-                        .chain()
-                        .focus()
-                        .toggleItalic()
-                        .run()
-                }
-                className={editor.isActive('italic') ? 'is-active' : ''}
-            >
-                Italic
-            </button>
-            {/* underline */}
-            <button
-                onClick={() => editor.chain().focus().toggleUnderline().run()}
-                disabled={
-                    !editor.can()
-                        .chain()
-                        .focus()
-                        .toggleUnderline()
-                        .run()
-                }
-                className={editor.isActive('underline') ? 'is-active' : ''}
-            >
-                Underline
-            </button>
-            {/* clear marks (bold italic strike) */}
-            <button onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}>
-                Clear Formatting
-            </button>
-            {/* paragraph */}
-            <button
-                onClick={() => editor.chain().focus().setParagraph().run()}
-                className={editor.isActive('paragraph') ? 'is-active' : ''}
-            >
-                Paragraph
-            </button>
-            {/* heading level 1 */}
-            <button
-                onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-                className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
-            >
-                H1
-            </button>
-            {/* heading level 2 */}
-            <button
-                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-                className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
-            >
-                H2
-            </button>
-            {/* bullet list */}
-            <button
-                onClick={() => editor.chain().focus().toggleBulletList().run()}
-                className={editor.isActive('bulletList') ? 'is-active' : ''}
-            >
-                Bullet list
-            </button>
-            {/* ordered list */}
-            <button
-                onClick={() => editor.chain().focus().toggleOrderedList().run()}
-                className={editor.isActive('orderedList') ? 'is-active' : ''}
-            >
-                Ordered list
-            </button>
-
-            {/* horizontal line break */}
-            <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-                Horizontal rule
-            </button>
+        <div className="format-bar">
             {/* undo */}
             <button
                 onClick={() => editor.chain().focus().undo().run()}
@@ -104,8 +25,9 @@ function EditorMenuBar() {
                         .undo()
                         .run()
                 }
+                className="format-button"
             >
-                Undo
+                <FontAwesomeIcon icon={faRotateBackward} />
             </button>
             {/* redo */}
             <button
@@ -117,9 +39,112 @@ function EditorMenuBar() {
                         .redo()
                         .run()
                 }
+                className="format-button"
             >
-                Redo
+                <FontAwesomeIcon icon={faRotateForward} />
             </button>
+
+            <span className="vertical-break">|</span>
+
+            {/* bold */}
+            <button
+                onClick={() => editor.chain().focus().toggleBold().run()}
+                disabled={
+                    !editor.can()
+                        .chain()
+                        .focus()
+                        .toggleBold()
+                        .run()
+                }
+                className={editor.isActive('bold') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faBold} />
+            </button>
+            {/* italic */}
+            <button
+                onClick={() => editor.chain().focus().toggleItalic().run()}
+                disabled={
+                    !editor.can()
+                        .chain()
+                        .focus()
+                        .toggleItalic()
+                        .run()
+                }
+                className={editor.isActive('italic') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faItalic} />
+            </button>
+            {/* underline */}
+            <button
+                onClick={() => editor.chain().focus().toggleUnderline().run()}
+                disabled={
+                    !editor.can()
+                        .chain()
+                        .focus()
+                        .toggleUnderline()
+                        .run()
+                }
+                className={editor.isActive('underline') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faUnderline} />
+            </button>
+
+            <span className="vertical-break">|</span>
+
+            {/* paragraph */}
+            <button
+                onClick={() => editor.chain().focus().setParagraph().run()}
+                className={editor.isActive('paragraph') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faParagraph} />
+            </button>
+            {/* heading level 1 */}
+            <button
+                onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                className={editor.isActive('heading', { level: 2 }) ? 'format-button is-active' : 'format-button'}
+            >
+                H1
+            </button>
+            {/* heading level 2 */}
+            <button
+                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                className={editor.isActive('heading', { level: 3 }) ? 'format-button is-active' : 'format-button'}
+            >
+                H2
+            </button>
+            {/* bullet list */}
+            <button
+                onClick={() => editor.chain().focus().toggleBulletList().run()}
+                className={editor.isActive('bulletList') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faList} />
+            </button>
+            {/* ordered list */}
+            <button
+                onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                className={editor.isActive('orderedList') ? 'format-button is-active' : 'format-button'}
+            >
+                <FontAwesomeIcon icon={faListOl} />
+            </button>
+
+            {/* horizontal line break */}
+            <button
+                onClick={() => editor.chain().focus().setHorizontalRule().run()}
+                className="format-button"
+            >
+                <FontAwesomeIcon icon={faMinus} />
+            </button>
+
+            <span className="vertical-break">|</span>
+
+            {/* clear all formatting */}
+            <button
+                onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+                className="format-button"
+            >
+                <FontAwesomeIcon icon={faEraser} />
+            </button>
+
 
         </div>
     )

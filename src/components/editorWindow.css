@@ -1,60 +1,152 @@
+/* variables for the color pallet (to be inserted later) */
+:root {
+    --background-color: #ede9da;
+    --text-color: #0d3b66;
+    --border-color: #6c91c2;
+    --high-contrast-color: #ef3e36;
+}
+
 /* parent container for title and editor */
 .content-container {
+    /* flexbox styling */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 
+    /* general styling */
     width: 100%;
     height: 90vh;
-    border: 1px solid black;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* title bar */
 .editor-title {
-    color: blue;
+    /* general styling */
     text-align: center;
-    height: 5%;
-    border: 1px solid blue;
+    height: 4vh;
+    font-size: 2.5rem;
+    font-weight: 600;
 
 }
 
 /* parent container for whole editor (menu / editor window / save&cancel buttons */
 .editor {
+    /* flexbox styling */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 
-    height: 95%;
-    border: 1px solid blue;
-
+    /* general styling */
+    height: 86vh;
 }
 
 /* menu bar */
-.format-buttons {
+.format-bar {
     /* becoming it's own flex parent container */
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     gap: .5rem;
 
     /* general styling */
-    height: 5%;
-    border: 1px solid orange;
+    height: 3vh;
+
+    width: 90vw;
+    max-width: 70rem;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    border: 3px solid var(--border-color);
+    background-color: var(--border-color);
+}
+
+.vertical-break {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* buttons within the format bar */
+.format-button {
+    height: 2rem;
+    width: 2rem;
+
+    background-color: var(--border-color);
+    border: 2px solid var(--text-color);
+    font-weight: 600;
+}
+
+.format-button:hover {
+    background-color: var(--text-color);
+}
+
+/* active format buttons withing the format bar */
+.is-active {
+    background-color: var(--text-color);
+}
+
+.is-active:hover {
+    background-color: var(--border-color);
 }
 
 /* editor window */
 .tiptap {
     /* general styling */
-    height: 50%;
-    max-height: 50%;
+    height: 78vh;
+    max-height: 78vh;
+
+    width: 90vw;
+    max-width: 70rem;
     overflow: auto;
-    border: 1px solid orange;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    border: 3px solid var(--border-color);
 }
 
 .change-buttons {
     /* flexbox styling */
-    /* align-self: flex-end; */
+    align-self: flex-end;
+
+    /* becoming it's own flexbox */
+    display: flex;
+    gap: .5rem;
 
     /* general styling */
-    height: 5%;
-    border: 1px solid orange;
+    height: 3vh;
+    margin-top: 1vh;
+}
+
+#cancel {
+    border-color: var(--high-contrast-color);
+    font-size: 1.1rem;
+}
+
+#cancel:hover {
+    background-color: var(--high-contrast-color);
+    color: var(--background-color);
+}
+
+#save {
+    border-color: var(--border-color);
+    font-size: 1.1rem;
+}
+
+#save:hover {
+    background-color: var(--border-color);
+    color: var(--background-color);
+}
+
+/* disabled behavior for all buttons */
+.format-button:disabled,
+#cancel:disabled,
+#save:disabled {
+    color: black;
+    background-color: gray;
+    border: none;
+    opacity: 50%;
 }

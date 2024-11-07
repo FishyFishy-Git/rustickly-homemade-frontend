@@ -3,7 +3,7 @@ import './editorWindow.css'
 
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
-import { EditorProvider, useCurrentEditor } from '@tiptap/react'
+import { EditorProvider } from '@tiptap/react'
 import { useEffect, useState } from 'react'
 import EditorMenuBar from './EditorMenuBar'
 import EditorChanges from './EditorChanges'
@@ -73,9 +73,12 @@ function EditorWindow() {
                     slotAfter={<EditorChanges content={content} />}
                     extensions={extensions}
                     content={editorContent}
+                    className={'test-class'}
                     onCreate={({ editor }) => {
                         setContent(editor.getJSON())
                         console.log('the test', editor.getJSON())
+                        document.getElementById('save').disabled = true
+                        document.getElementById("cancel").disabled = true
                     }}
                     onUpdate={({ editor }) => {
                         const currContent = JSON.stringify(editor.getJSON().content)
@@ -83,11 +86,15 @@ function EditorWindow() {
                         if (currContent === origContent) {
                             console.log("the same")
                             // disable cancel and save buttons
+                            document.getElementById('save').disabled = true
+                            document.getElementById("cancel").disabled = true
                         } else {
                             console.log('content', content.content)
                             console.log('currContent', currContent.content)
                             console.log("different")
                             // enable cancel and save buttons
+                            document.getElementById('save').disabled = false
+                            document.getElementById("cancel").disabled = false
                         }
                     }}
                 >
