@@ -8,16 +8,17 @@ import { useEffect, useState } from 'react'
 import EditorMenuBar from './EditorMenuBar'
 import EditorChanges from './EditorChanges'
 
-function EditorWindow() {
+function EditorWindow({ page }) {
     // set variables
     const [content, setContent] = useState({})
     const [mount, setMount] = useState(false)
     const [loadError, setLoadError] = useState(false)
 
+    // get content of page from database
     const getContent = async (contentLoader) => {
         try {
             // get content from db
-            const response = await fetch('http://localhost:4000/api/editor/load/newest', {
+            const response = await fetch(`http://localhost:4000/api/editor/${page}/load/newest`, {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }
             })
@@ -70,7 +71,7 @@ function EditorWindow() {
             <div className="editor">
                 <EditorProvider
                     slotBefore={<EditorMenuBar />}
-                    slotAfter={<EditorChanges content={content} />}
+                    slotAfter={<EditorChanges content={content} page={page} />}
                     extensions={extensions}
                     content={editorContent}
                     className={'test-class'}

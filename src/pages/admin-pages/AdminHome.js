@@ -1,9 +1,11 @@
 //imports
+import EditorWindow from "../../components/EditorWindow"
 
 function AdminAbout() {
     return (
-        <div>
-            <h2>Home Editor and landing page from login</h2>
+        <div className="content-container">
+            <h1 className="editor-title">Homepage Editor</h1>
+            <EditorWindow page={'home'} />
         </div>
     )
 }

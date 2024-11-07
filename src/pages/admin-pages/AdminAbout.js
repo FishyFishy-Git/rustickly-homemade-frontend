@@ -4,8 +4,8 @@ import EditorWindow from '../../components/EditorWindow'
 function AdminAbout() {
     return (
         <div className="content-container">
-            <div className="editor-title">About Editor</div>
-            <EditorWindow />
+            <h1 className="editor-title">About Editor</h1>
+            <EditorWindow page={'about'} />
         </div>
     )
 }

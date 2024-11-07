@@ -1,6 +1,6 @@
 import { useCurrentEditor } from "@tiptap/react";
 
-function EditorChanges({ content }) {
+function EditorChanges({ content, page }) {
     const { editor } = useCurrentEditor()
 
     if (!editor) { return null }
@@ -9,7 +9,7 @@ function EditorChanges({ content }) {
         console.log(editor.getJSON())
 
         // TODO: make the server that will handle this request
-        fetch('http://localhost:4000/api/editor/save', {
+        fetch(`http://localhost:4000/api/editor/${page}/save`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(editor.getJSON())
@@ -41,11 +41,12 @@ function EditorChanges({ content }) {
         }
     }
 
-    return (<div className="change-buttons">
-        <button onClick={handleCancel} className="bubble" id="cancel">Cancel</button>
-        <button onClick={handleSave} className="bubble" id="save">Save</button>
-
-    </div>)
+    return (
+        <div className="change-buttons">
+            <button onClick={handleCancel} className="bubble" id="cancel">Cancel</button>
+            <button onClick={handleSave} className="bubble" id="save">Save</button>
+        </div>
+    )
 }
 
 export default EditorChanges

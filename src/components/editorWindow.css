@@ -25,9 +25,10 @@
 .editor-title {
     /* general styling */
     text-align: center;
-    height: 4vh;
-    font-size: 2.5rem;
+    height: 4;
+    font-size: 2em;
     font-weight: 600;
+    margin: 0;
 
 }
 
@@ -51,22 +52,23 @@
     gap: .5rem;
 
     /* general styling */
-    height: 3vh;
+    /* height: 3vh; */
 
     width: 90vw;
     max-width: 70rem;
 
+    padding: 5px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 
-    border: 3px solid var(--border-color);
+    border: 3px solid var(--text-color);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
     background-color: var(--border-color);
 }
 
 .vertical-break {
-    align-self: flex-start;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* buttons within the format bar */
@@ -83,20 +85,20 @@
     background-color: var(--text-color);
 }
 
-/* active format buttons withing the format bar */
+/* active format buttons within the format bar */
 .is-active {
     background-color: var(--text-color);
 }
-
 .is-active:hover {
     background-color: var(--border-color);
 }
 
 /* editor window */
 .tiptap {
+    /* flex-grow: 2; */
     /* general styling */
-    height: 78vh;
-    max-height: 78vh;
+    height: min-content;
+    max-height: 77vh;
 
     width: 90vw;
     max-width: 70rem;
@@ -106,8 +108,14 @@
     padding-right: 0.5rem;
 
     border: 3px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+.tiptap:focus {
+    outline: none;
 }
 
+/* container div for cancel & save buttons */
 .change-buttons {
     /* flexbox styling */
     align-self: flex-end;
@@ -119,23 +127,26 @@
     /* general styling */
     height: 3vh;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
+/* cancel button */
 #cancel {
     border-color: var(--high-contrast-color);
     font-size: 1.1rem;
+    color: var(--high-contrast-color);
 }
-
 #cancel:hover {
     background-color: var(--high-contrast-color);
     color: var(--background-color);
 }
 
+/* save button */
 #save {
     border-color: var(--border-color);
     font-size: 1.1rem;
+    color: var(--text-color);
 }
-
 #save:hover {
     background-color: var(--border-color);
     color: var(--background-color);
@@ -147,6 +158,6 @@
 #save:disabled {
     color: black;
     background-color: gray;
-    border: none;
+    /* border: none; */
     opacity: 50%;
 }

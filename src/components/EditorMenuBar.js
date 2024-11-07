@@ -94,20 +94,26 @@ function EditorMenuBar() {
             {/* paragraph */}
             <button
                 onClick={() => editor.chain().focus().setParagraph().run()}
-                className={editor.isActive('paragraph') ? 'format-button is-active' : 'format-button'}
+                className={
+                    editor.isActive('paragraph') && !(editor.isActive('bulletList')) && !(editor.isActive('orderedList'))
+                    ? 
+                    'format-button is-active' 
+                    : 
+                    'format-button'
+                }
             >
                 <FontAwesomeIcon icon={faParagraph} />
             </button>
             {/* heading level 1 */}
             <button
-                onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
                 className={editor.isActive('heading', { level: 2 }) ? 'format-button is-active' : 'format-button'}
             >
                 H1
             </button>
             {/* heading level 2 */}
             <button
-                onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
                 className={editor.isActive('heading', { level: 3 }) ? 'format-button is-active' : 'format-button'}
             >
                 H2
@@ -115,7 +121,7 @@ function EditorMenuBar() {
             {/* bullet list */}
             <button
                 onClick={() => editor.chain().focus().toggleBulletList().run()}
-                className={editor.isActive('bulletList') ? 'format-button is-active' : 'format-button'}
+                className={editor.isActive('bulletList') ? ('format-button is-active') : 'format-button'}
             >
                 <FontAwesomeIcon icon={faList} />
             </button>
