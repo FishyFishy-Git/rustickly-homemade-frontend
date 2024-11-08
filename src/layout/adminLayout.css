@@ -1,13 +1,18 @@
+.mobile-icon {
+  display: none
+}
+
 .admin-header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 
   height: 10vh;
-  padding: 0 1vh;
+  padding: 0 1vw;
 
   background-color: var(--border-color);
-  /* border-bottom: 1px solid black; */
 }
 
 .admin-links {
@@ -16,14 +21,14 @@
 
   /* flexbox-parent styling */
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
 }
 
 .admin-nav {
-  padding: 0 5px 2px;
+  padding: 5px 10px;
 
   color: var(--text-color);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 500;
 
   background-color: var(--background-color);
@@ -36,6 +41,32 @@
     border: 2px solid var(--background-color);
 }
 
-#logo {
-  scale: 0.75;
+#admin-logo {
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+
+  height: 8vh;
+}
+
+@media (max-width: 1200px) {
+  .mobile-icon {
+    display: inline;
+    height: 4vh;
+    color: var(--text-color);
+  }
+  .admin-header {
+    padding: 0 3vw;
+  }
+  .admin-links {
+    display: none;
+  }
+  .admin-nav {
+    font-size: .5rem;
+  }
+  #logout {
+    display: none;
+  }
+  #logo {
+    /* i don't think i need to do anything with this */
+  }
 }
