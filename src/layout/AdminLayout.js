@@ -7,11 +7,13 @@ function AdminLayout() {
         <header className="admin-header">
             <section >
                 <img src={logo} alt="Rustickly Homemade's logo" id="logo" />
-            </section>            
-            <NavLink to='/admin/'>Home</NavLink>
-            <NavLink to='/admin/about'>About</NavLink>
-            <NavLink to='/admin/portfolio'>Portfolio</NavLink>
-            <NavLink id="logout">Logout</NavLink>
+            </section>
+            <div className="admin-links">
+                <NavLink to='/admin/' className={'admin-nav'} >Home</NavLink>
+                <NavLink to='/admin/about' className={'admin-nav'} >About</NavLink>
+                <NavLink to='/admin/portfolio' className={'admin-nav'} >Portfolio</NavLink>
+                <NavLink id="logout" className={'admin-nav'} >Logout</NavLink>
+            </div>
         </header>
         <Outlet />
     </>)
