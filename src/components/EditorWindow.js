@@ -71,7 +71,7 @@ function EditorWindow({ page }) {
             <div className="editor">
                 <EditorProvider
                     slotBefore={<EditorMenuBar />}
-                    slotAfter={<EditorChanges content={content} page={page} />}
+                    slotAfter={<EditorChanges content={content} page={page} setContent={setContent} />}
                     extensions={extensions}
                     content={editorContent}
                     className={'test-class'}
@@ -82,19 +82,19 @@ function EditorWindow({ page }) {
                         document.getElementById("cancel").disabled = true
                     }}
                     onUpdate={({ editor }) => {
+                        // set original and current content variables
                         const currContent = JSON.stringify(editor.getJSON().content)
                         const origContent = JSON.stringify(content.content)
+                        // check if the content is the same
                         if (currContent === origContent) {
                             console.log("the same")
-                            // disable cancel and save buttons
-                            document.getElementById('save').disabled = true
+                            // if content is the same, disable cancel and save buttons
+                            document.getElementById("save").disabled = true
                             document.getElementById("cancel").disabled = true
                         } else {
-                            console.log('content', content.content)
-                            console.log('currContent', currContent.content)
                             console.log("different")
-                            // enable cancel and save buttons
-                            document.getElementById('save').disabled = false
+                            // if content is different, enable cancel and save buttons
+                            document.getElementById("save").disabled = false
                             document.getElementById("cancel").disabled = false
                         }
                     }}
