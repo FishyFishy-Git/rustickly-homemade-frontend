@@ -15,6 +15,7 @@ import Quote from "./pages/Quote";
 import Login from "./pages/Login";
 import AdminLayout from "./layout/AdminLayout";
 import Admin from "./pages/Admin";
+import AdminPortfolio from "./pages/AdminPortfolio";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="admin" element={<AdminLayout />}>
         <Route path="/admin" element={<Admin />} />
         <Route path="login" element={<Login />} />
+        <Route path="portfolio" element={<AdminPortfolio />} />
       </Route>
     </>
   )

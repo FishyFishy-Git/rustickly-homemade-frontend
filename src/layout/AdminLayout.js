@@ -9,7 +9,7 @@ function AdminLayout() {
         <section>
           <img src={logo} alt="Rustickly Homemade's logo" id="logo" />
         </section>
-        <NavLink>Portfolio</NavLink>
+        <NavLink id="portfolio">Portfolio</NavLink>
         <NavLink>About</NavLink>
         <NavLink id="logout">Logout</NavLink>
       </header>
