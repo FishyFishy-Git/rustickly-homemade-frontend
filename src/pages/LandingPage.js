@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/Rustickly_2.png";
 import "./landingPage.css";
 import { NavLink } from "react-router-dom";
+import ClientContent from "../components/ClientContent";
 
 function LandingPage() {
   return (
@@ -66,10 +67,12 @@ function LandingPage() {
       </div>
 
       <div className="logo-header">
-        <h1 id="title">Rustically Homemade</h1>
+        <h1 id="title">Rustickly Homemade</h1>
       </div>
 
-      <div className="content-block"></div>
+      <div className="content-block">
+        <ClientContent page={"home"} />
+      </div>
     </div>
   );
 }
