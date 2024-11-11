@@ -1,0 +1,11 @@
+:root .gallery-container{
+    margin-top: 10%; /* Adjust value as needed */
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
