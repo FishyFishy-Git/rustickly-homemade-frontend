@@ -5,7 +5,7 @@ import "./quoteHandler.css";
 
 function QuoteHandler() {
   const [formData, setFormData] = useState({
-    //holds feild information
+    //holds field information
     name: "",
     email: "",
     date: "",
@@ -38,7 +38,7 @@ function QuoteHandler() {
     };
 
     emailjs
-      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Subai
+      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Su Bai
       .then((response) => {
         console.log("email sent", response);
         setFormData({
@@ -70,7 +70,7 @@ function QuoteHandler() {
   return (
     <div className="form-container">
       <h2></h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="quote-form">
         <input
           className="quote-input"
           type="text"
