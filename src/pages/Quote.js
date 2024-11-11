@@ -1,7 +1,7 @@
 import React from "react";
 import QuoteHandler from "../components/QuoteHandler";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/Rustickly_2.png";
+import Logo from "../assets/Logo";
 
 function Quote() {
   return (
@@ -9,11 +9,7 @@ function Quote() {
       <div className="main-container">
         <div className="navigation-bar">
           <section>
-            <img
-              id="logo"
-              src={logo}
-              alt="logo of the bakery Rustickly home made"
-            />
+            <Logo></Logo>
           </section>
           <div id="navlinksLP">
             <p className="linksLP" id="portfolio">
