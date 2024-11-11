@@ -22,7 +22,7 @@ function Quote() {
             </p>
             <hr />
             <p className="links-quote" id="quote">
-              <NavLink className="m-plus-rounded-1c-regular" to="/quote">Request a Quote!</NavLink>
+              <NavLink className="m-plus-rounded-1c-regular" to="/">Home</NavLink>
             </p>
           </div>
 
