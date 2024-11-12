@@ -4,6 +4,7 @@ import "./landingPage.css";
 import { NavLink } from "react-router-dom";
 import ClientContent from "../components/ClientContent";
 
+
 function LandingPage() {
   return (
     <div className="main-container">
