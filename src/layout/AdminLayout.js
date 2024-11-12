@@ -1,13 +1,15 @@
+
+import logo from '../assets/Logo'
 import "./adminLayout.css";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import logo from "../assets/Rustickly_2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBars,
     faXmark,
     faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 function AdminLayout() {
     const [click, setClick] = useState(false);
