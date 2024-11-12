@@ -4,10 +4,6 @@
 
 .desktop-nav {
   /* flexbox styling */
-
-
-.admin-header {
-
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,11 +44,11 @@
     transition: .3s;
 }
 
-#admin-logo {
+/* #admin-logo {
   border: 2px solid var(--text-color);
   border-radius: 50%;
   height: 8vh;
-}
+} */
 
 
 @media (max-width: 800px) {

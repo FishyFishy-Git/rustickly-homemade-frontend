@@ -85,7 +85,7 @@ function Quote() {
         <h2 className="contact-header">Contact Us</h2>
         <QuoteHandler className="form" />
       </div>
-    </div>
+    </>
   );
 }
 
