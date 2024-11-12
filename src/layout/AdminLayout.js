@@ -1,5 +1,5 @@
 
-import logo from '../assets/Logo'
+import Logo from '../assets/Logo'
 import "./adminLayout.css";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
@@ -49,11 +49,7 @@ function AdminLayout() {
         <>
             {/* desktop layout */}
             <header className="desktop-nav">
-                <img
-                    src={logo}
-                    alt="Rustickly Homemade's logo"
-                    id="admin-logo"
-                />
+                <Logo id="admin-logo"/>
                 <NavLinks />
                 <NavLink id="logout" className={"admin-nav"}>
                     Logout
@@ -78,11 +74,7 @@ function AdminLayout() {
                 )}
 
                 {/* company logo */}
-                <img
-                    src={logo}
-                    alt="Rustickly Homemade's logo"
-                    id="admin-logo"
-                />
+                <Logo />
 
                 {/* logout button */}
                 <NavLink>
