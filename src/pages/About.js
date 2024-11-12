@@ -1,7 +1,7 @@
 import React from "react";
 import './about.css'; 
 import { NavLink } from "react-router-dom";
-import logo from '../assets/Rustickly_2.png'
+import logo from '../assets/Logo'
 import ClientContent from "../components/ClientContent";
 
 function About() {
