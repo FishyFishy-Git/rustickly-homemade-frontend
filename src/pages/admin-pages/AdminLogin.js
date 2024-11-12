@@ -1,7 +1,6 @@
 import "./adminLogin.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../contexts/AdminContext";
 
 function AdminLogin() {
     // set useState variables
@@ -58,7 +57,6 @@ function AdminLogin() {
     };
 
     return (
-        <UserContext>
             <main className="admin-main">
                 <div className="auth-inputs">
                     <div className="email">
@@ -99,7 +97,6 @@ function AdminLogin() {
                     <p className="auth-warning">{errorMessage}</p>
                 </div>
             </main>
-        </UserContext>
     );
 }
 

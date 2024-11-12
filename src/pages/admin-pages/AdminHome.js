@@ -1,16 +1,21 @@
 //imports
+import { useContext } from "react";
+import { AdminContext } from "../../contexts/AdminContext";
 import EditorWindow from "../../components/EditorWindow";
-import { UserContext } from "../../contexts/AdminContext";
 
 function AdminAbout() {
-    return (
-        <UserContext>
+    const { user } = useContext(AdminContext);
+
+    if (!user) {
+        return "Cannot access, must be signed in.";
+    } else {
+        return (
             <div className="content-container">
                 <h1 className="editor-title">Homepage Editor</h1>
                 <EditorWindow page={"home"} />
             </div>
-        </UserContext>
-    );
+        );
+    }
 }
 
 export default AdminAbout;
