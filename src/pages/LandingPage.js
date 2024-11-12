@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo";
 import "./landingPage.css";
 import { NavLink } from "react-router-dom";
+import ClientContent from "../components/ClientContent";
 
 function LandingPage() {
   return (
@@ -66,7 +67,7 @@ function LandingPage() {
         <p className="give-you-glory-regular" id="home-landing">Home</p>
       </div>
       <div className="content-block">
-
+        <ClientContent page={"home"} />
       </div>
     </div>
   );
