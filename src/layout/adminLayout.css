@@ -44,11 +44,10 @@
     transition: .3s;
 }
 
-/* #admin-logo {
-  border: 2px solid var(--text-color);
-  border-radius: 50%;
+header #logo {
   height: 8vh;
-} */
+  width: auto;
+}
 
 
 @media (max-width: 800px) {

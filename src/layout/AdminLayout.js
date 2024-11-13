@@ -49,7 +49,7 @@ function AdminLayout() {
         <>
             {/* desktop layout */}
             <header className="desktop-nav">
-                <Logo id="admin-logo"/>
+                <Logo />
                 <NavLinks />
                 <NavLink id="logout" className={"admin-nav"}>
                     Logout
