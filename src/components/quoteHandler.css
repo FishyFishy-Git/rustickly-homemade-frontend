@@ -14,9 +14,15 @@
   }
   
   .form-container form {
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .form-info{
+    display: flex;
+    align-self: flex-start;
   }
   
   .quote-input{
@@ -45,7 +51,7 @@
     cursor: pointer;;
     border-radius: 4px;
     display: flex;
-    gap: 50px;
+    margin-top: 20px;
   }
   
   .submit-button:hover {

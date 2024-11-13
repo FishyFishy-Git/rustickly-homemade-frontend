@@ -1,11 +1,15 @@
-//imports
+import React from "react";
+import UploadWidget from "../../components/UploadWidget";
+import DisplayFunction from "../../components/DisplayGallery";
+import "./adminPortfolio.css";
 
-function AdminAbout() {
-    return (
-        <div>
-            <h2>Portfolio Editor</h2>
-        </div>
-    )
+function AdminPortfolio() {
+  return (
+    <div className="portfolio-container">
+      <UploadWidget className="upload-widget" />
+      <DisplayFunction className="display-gallery" />
+    </div>
+  );
 }
 
-export default AdminAbout
+export default AdminPortfolio;
