@@ -1,7 +1,8 @@
 import React from "react";
 import './about.css'; 
 import { NavLink } from "react-router-dom";
-import logo from '../assets/Rustickly_2.png'
+import logo from '../assets/Logo'
+import ClientContent from "../components/ClientContent";
 
 function About() {
     return(
@@ -37,9 +38,7 @@ function About() {
             </div>
 
             <div className="content-about">
-                <p id="about-us">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eligendi ullam cumque nesciunt delectus deleniti non sint in temporibus sed eaque, 
-                    incidunt autem, quae inventore, tempora debitis similique. Neque, atque odio?</p>
+                <ClientContent page={"about"}/>
             </div>
         </div>
     );

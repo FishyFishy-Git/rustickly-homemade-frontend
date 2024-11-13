@@ -74,7 +74,7 @@ function QuoteHandler() {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <label className="form-info" for="name">
-          Name
+          Name:
         </label>
         <input
           className="quote-input"
@@ -86,7 +86,7 @@ function QuoteHandler() {
           required
         />
         <label className="form-info" for="email">
-          Email
+          Email:
         </label>
         <input
           className="quote-input"
@@ -110,7 +110,7 @@ function QuoteHandler() {
           placeholder="Ex:123-123-1234"
         />
         <label className="form-info" for="Date">
-          Date to Recieve
+          Date to Recieve:
         </label>
         <input
           className="quote-input"
@@ -122,7 +122,7 @@ function QuoteHandler() {
           required
         />
         <label className="form-info" for="request">
-          Details
+          Details:
         </label>
         <textarea
           className="quote-input"
