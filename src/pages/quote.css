@@ -46,11 +46,6 @@
    background-color: aqua;
    }*/
    
-   a {
-       text-decoration: none;
-       color: black;
-   }
-   
    .logo-header-quote {
     display: flex;
     justify-content: center;

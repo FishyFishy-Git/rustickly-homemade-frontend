@@ -12,11 +12,11 @@ function About() {
         <NavLink to="/"><Logo id="logo"></Logo></NavLink>
         </section>
             <div id="navlinksAbout">
-              <p className="linksA" id='portfolio'><NavLink to="/portfolio">Gallery</NavLink></p>
+              <p className="linksA" id='portfolio'><NavLink className="m-plus-rounded-1c-regular" to="/portfolio">Gallery</NavLink></p>
               <hr />
-              <p className="linksA" id="home"><NavLink to="/">Home</NavLink></p>
+              <p className="linksA" id="home"><NavLink className="m-plus-rounded-1c-regular" to="/">Home</NavLink></p>
               <hr />
-              <p className="linksA" id='quote'><NavLink to="/quote">Request a quote!</NavLink></p>
+              <p className="linksA" id='quote'><NavLink className="m-plus-rounded-1c-regular" to="/quote">Request a quote!</NavLink></p>
             </div>
               <div className="socials-about">
               <div id="facebook">
