@@ -65,9 +65,10 @@
     display: flex;
     justify-content: center;
     font-size: 3rem;
+    font-weight: 600;
     height: 100;
     width: 100%;
-    color:#230C0F;
+    color:#0D3B66;
     margin: 0;
 }
 
