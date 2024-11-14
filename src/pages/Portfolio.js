@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-//import logo from "../assets/Rustickly_2.png";
+import logo from "../assets/Logo";
 import DisplayFunction from "../components/DisplayGallery";
 import "./portfolio.css";
 
