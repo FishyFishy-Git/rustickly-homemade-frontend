@@ -1,4 +1,3 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Logo";
@@ -9,13 +8,7 @@ function Portfolio() {
   return (
     <div className="main-container">
       <div className="navigation-bar">
-        <section>
-          <img
-            id="logo"
-            src={logo}
-            alt="logo of the bakery Rustickly home made"
-          />
-        </section>
+        <section></section>
         <div id="navlinksLP">
           <p className="linksLP" id="portfolio">
             <NavLink to="/portfolio">Gallery</NavLink>
@@ -82,4 +75,3 @@ function Portfolio() {
 }
 
 export default Portfolio;
-

@@ -5,9 +5,10 @@ import "./quoteHandler.css";
 
 function QuoteHandler() {
   const [formData, setFormData] = useState({
-    //holds field information
+    //holds feild information
     name: "",
     email: "",
+    number: "",
     date: "",
     request: "",
   });
@@ -32,18 +33,20 @@ function QuoteHandler() {
       //holds all the params that will hold information to be sent in email
       from_name: formData.name,
       from_email: formData.email,
-      to_name: "Su Bai",
+      from_number: formData.number,
+      to_name: "Subai",
       date: formData.date,
       request: formData.request,
     };
 
     emailjs
-      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Su Bai
+      .send(serviceID, templateID, templateParams, PublicKey) //sends email to Subai
       .then((response) => {
         console.log("email sent", response);
         setFormData({
           name: "",
           email: "",
+          number: "",
           date: "",
           request: "",
         }); // Reset the entire form
@@ -69,8 +72,10 @@ function QuoteHandler() {
 
   return (
     <div className="form-container">
-      <h2></h2>
-      <form onSubmit={handleSubmit} className="quote-form">
+      <form onSubmit={handleSubmit}>
+        <label className="form-info" for="name">
+          Name:
+        </label>
         <input
           className="quote-input"
           type="text"
@@ -80,6 +85,9 @@ function QuoteHandler() {
           placeholder="Name"
           required
         />
+        <label className="form-info" for="email">
+          Email:
+        </label>
         <input
           className="quote-input"
           type="text"
@@ -89,6 +97,21 @@ function QuoteHandler() {
           placeholder="Email"
           required
         />
+        <label className="form-info" for="number">
+          Phone number:
+        </label>
+        <input
+          className="quote-input"
+          type="tel"
+          name="number"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Ex:123-123-1234"
+        />
+        <label className="form-info" for="Date">
+          Date to Recieve:
+        </label>
         <input
           className="quote-input"
           type="date"
@@ -98,6 +121,9 @@ function QuoteHandler() {
           onChange={handleChange}
           required
         />
+        <label className="form-info" for="request">
+          Details:
+        </label>
         <textarea
           className="quote-input"
           cols="30"
@@ -105,7 +131,7 @@ function QuoteHandler() {
           name="request"
           value={formData.request}
           onChange={handleChange}
-          placeholder="Request"
+          placeholder="Order request details"
           required
         />
         <button type="submit" className="submit-button">
