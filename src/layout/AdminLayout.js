@@ -6,6 +6,7 @@ import {
     faBars,
     faXmark,
     faArrowRightFromBracket,
+    faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useContext } from "react";
@@ -17,10 +18,12 @@ function AdminLayout() {
     const { user, setUser } = useContext(AdminContext);
     const [click, setClick] = useState(false);
 
+    // function to close menu in mobile mode
     const closeMenu = () => {
         setClick(false);
     };
 
+    // delete user context and token cookie
     const handleLogout = () => {
         setUser(null);
         document.cookie =
@@ -74,7 +77,7 @@ function AdminLayout() {
                         <NavLink
                             to="/admin/login"
                             id="logout"
-                            className={"admin-nav"}
+                            className="admin-nav"
                             onClick={() => handleLogout()}
                         >
                             Logout
@@ -84,7 +87,7 @@ function AdminLayout() {
                     <NavLink
                         to="/admin/login"
                         id="sign-in"
-                        className={"admin-nav"}
+                        className="admin-nav"
                     >
                         Log In
                     </NavLink>
@@ -94,19 +97,20 @@ function AdminLayout() {
             {/* mobile layout */}
             <header className="mobile-nav">
                 {/* hamburger menu */}
-                {click ? (
-                    <FontAwesomeIcon
-                        icon={faXmark}
-                        className="mobile-icon"
-                        onClick={() => setClick(!click)}
-                    />
-                ) : (
-                    <FontAwesomeIcon
-                        icon={faBars}
-                        className={"mobile-icon"}
-                        onClick={() => setClick(!click)}
-                    />
-                )}
+                {user &&
+                    (click ? (
+                        <FontAwesomeIcon
+                            icon={faXmark}
+                            className="mobile-icon"
+                            onClick={() => setClick(!click)}
+                        />
+                    ) : (
+                        <FontAwesomeIcon
+                            icon={faBars}
+                            className="mobile-icon"
+                            onClick={() => setClick(!click)}
+                        />
+                    ))}
 
                 {/* company logo */}
                 <img
@@ -116,12 +120,21 @@ function AdminLayout() {
                 />
 
                 {/* logout button */}
-                <NavLink to="/admin/login">
-                    <FontAwesomeIcon
-                        icon={faArrowRightFromBracket}
-                        className={"mobile-icon"}
-                    />
-                </NavLink>
+                {user ? (
+                    <NavLink to="/admin/login" onClick={() => handleLogout()}>
+                        <FontAwesomeIcon
+                            icon={faArrowRightFromBracket}
+                            className="mobile-icon"
+                        />
+                    </NavLink>
+                ) : (
+                    <NavLink to="/admin/login">
+                        <FontAwesomeIcon
+                            icon={faRightToBracket}
+                            className="mobile-icon"
+                        />
+                    </NavLink>
+                )}
 
                 {/* menu */}
                 {click && <NavLinks />}
