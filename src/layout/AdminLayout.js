@@ -1,8 +1,6 @@
-
-import logo from '../assets/Logo'
 import "./adminLayout.css";
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+
+import logo from "../assets/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBars,
@@ -10,8 +8,12 @@ import {
     faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useState, useContext } from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { AdminContext } from "../contexts/AdminContext";
 
 function AdminLayout() {
+    const { user, setUser } = useContext(AdminContext);
     const [click, setClick] = useState(false);
     const closeMenu = () => {
         setClick(false);
@@ -54,10 +56,27 @@ function AdminLayout() {
                     alt="Rustickly Homemade's logo"
                     id="admin-logo"
                 />
-                <NavLinks />
-                <NavLink id="logout" className={"admin-nav"}>
-                    Logout
-                </NavLink>
+                {user ? (
+                    <>
+                        <NavLinks />
+                        <NavLink
+                            to="/admin/login"
+                            id="logout"
+                            className={"admin-nav"}
+                            onClick={() => setUser(null)}
+                        >
+                            Logout
+                        </NavLink>
+                    </>
+                ) : (
+                    <NavLink
+                        to="/admin/login"
+                        id="sign-in"
+                        className={"admin-nav"}
+                    >
+                        Log In
+                    </NavLink>
+                )}
             </header>
 
             {/* mobile layout */}
@@ -85,7 +104,7 @@ function AdminLayout() {
                 />
 
                 {/* logout button */}
-                <NavLink>
+                <NavLink to="/admin/login">
                     <FontAwesomeIcon
                         icon={faArrowRightFromBracket}
                         className={"mobile-icon"}
