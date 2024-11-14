@@ -14,8 +14,8 @@ export default function AdminProvider({ children }) {
                     let cookieKeyValue = cookie.split("=");
                     cookiesObj[cookieKeyValue[0]] = cookieKeyValue[1];
                 });
-                if (Object.keys(cookiesObj).includes("user")) {
-                    setUser(cookiesObj.user);
+                if (Object.keys(cookiesObj).includes("token")) {
+                    setUser(cookiesObj.token);
                 }
             } catch (err) {
                 console.error(`Error getting user info: ${err}`);

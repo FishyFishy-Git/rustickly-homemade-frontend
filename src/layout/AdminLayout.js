@@ -13,10 +13,18 @@ import { NavLink, Outlet } from "react-router-dom";
 import { AdminContext } from "../contexts/AdminContext";
 
 function AdminLayout() {
+    // set contexts and states
     const { user, setUser } = useContext(AdminContext);
     const [click, setClick] = useState(false);
+
     const closeMenu = () => {
         setClick(false);
+    };
+
+    const handleLogout = () => {
+        setUser(null);
+        document.cookie =
+            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;";
     };
 
     const NavLinks = () => {
@@ -51,11 +59,15 @@ function AdminLayout() {
         <>
             {/* desktop layout */}
             <header className="desktop-nav">
+                {/* company logo */}
                 <img
                     src={logo}
                     alt="Rustickly Homemade's logo"
                     id="admin-logo"
                 />
+
+                {/* show nav links & logout if there is a user logged in,
+                    show only a login button if there is no user logged in */}
                 {user ? (
                     <>
                         <NavLinks />
@@ -63,7 +75,7 @@ function AdminLayout() {
                             to="/admin/login"
                             id="logout"
                             className={"admin-nav"}
-                            onClick={() => setUser(null)}
+                            onClick={() => handleLogout()}
                         >
                             Logout
                         </NavLink>
