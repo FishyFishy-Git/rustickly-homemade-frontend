@@ -1,5 +1,5 @@
 import React from "react";
-import "./quote.css"
+import "./quote.css";
 import QuoteHandler from "../components/QuoteHandler";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/Logo";
@@ -18,7 +18,9 @@ function Quote() {
             </p>
             <hr />
             <p className="links-quote" id="about-us">
-              <NavLink className="m-plus-rounded-1c-regular" to="/about">About</NavLink>
+              <NavLink className="m-plus-rounded-1c-regular" to="/about">
+                About
+              </NavLink>
             </p>
             <hr />
             <p className="links-quote" id="quote">
@@ -56,7 +58,9 @@ function Quote() {
         </div>
 
         <div className="logo-header-quote">
-          <p className="give-you-glory-regular" id="home-landing">Quote</p>
+          <p className="give-you-glory-regular" id="home-landing">
+            Quote
+          </p>
         </div>
 
         <div className="content-block-quote">
@@ -64,6 +68,7 @@ function Quote() {
           <QuoteHandler className="form" />
         </div>
       </div>
+
 
       <div className="logo-header">
         <h1 id="title">Rustically Homemade</h1>
