@@ -22,7 +22,7 @@ function Portfolio() {
           </p>
           <hr />
           <p className="linksP" id="qoute">
-            <NavLink className="m-plus-rounded-1c-regular" to="/quote">Contact Us!</NavLink>
+            <NavLink className="m-plus-rounded-1c-regular" to="/quote">Request a Quote!</NavLink>
           </p>
         </div>
 

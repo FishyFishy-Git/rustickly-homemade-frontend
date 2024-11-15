@@ -14,7 +14,7 @@ function Quote() {
           </section>
           <div id="navlinks-quote">
             <p className="links-quote" id="portfolio">
-              <NavLink className="m-plus-rounded-1c-regular" to="/portfolio">Gallery</NavLink>
+              <NavLink className="m-plus-rounded-1c-regular" to="/">Home</NavLink>
             </p>
             <hr />
             <p className="links-quote" id="about-us">
@@ -22,7 +22,7 @@ function Quote() {
             </p>
             <hr />
             <p className="links-quote" id="quote">
-              <NavLink className="m-plus-rounded-1c-regular" to="/">Home</NavLink>
+              <NavLink className="m-plus-rounded-1c-regular" to="/portfolio">Gallery</NavLink>
             </p>
           </div>
 
@@ -67,11 +67,6 @@ function Quote() {
 
       <div className="logo-header">
         <h1 id="title">Rustically Homemade</h1>
-      </div>
-
-      <div className="content-block">
-        <h2 className="contact-header">Contact Us</h2>
-        <p>We're here to help!</p>
       </div>
     </>
   );
