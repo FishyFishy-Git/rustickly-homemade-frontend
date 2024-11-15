@@ -1,12 +1,15 @@
 import './adminLogin.css'
-import { useState } from 'react'
+
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AdminContext } from '../../contexts/AdminContext'
 
 function AdminLogin() {
     // set useState variables
     const [errorMessage, setErrorMessage] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const {setUser} = useContext(AdminContext)
     const nav = useNavigate()
 
     const handleToken = (data) => {
@@ -17,7 +20,9 @@ function AdminLogin() {
             user.token = data.token
             
             // set cookie to store token (or would it be better to store all data)
+            document.cookie = `token=${user.token}`
             // add userContext to set
+            setUser(user)
 
             // navigate to admin page
             nav("/admin")

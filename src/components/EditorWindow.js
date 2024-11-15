@@ -77,7 +77,6 @@ function EditorWindow({ page }) {
                     className={'test-class'}
                     onCreate={({ editor }) => {
                         setContent(editor.getJSON())
-                        console.log('the test', editor.getJSON())
                         document.getElementById('save').disabled = true
                         document.getElementById("cancel").disabled = true
                     }}
