@@ -28,14 +28,14 @@ function AdminLayout() {
     const handleLogout = () => {
         setUser(null);
         document.cookie =
-            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;";
+            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     };
 
     const NavLinks = () => {
         return (
             <div className="admin-links">
                 <NavLink
-                    to="/admin/"
+                    to="/admin/home"
                     className={"admin-nav"}
                     onClick={() => closeMenu()}
                 >
@@ -71,7 +71,7 @@ function AdminLayout() {
                     <>
                         <NavLinks />
                         <NavLink
-                            to="/admin/login"
+                            to="/admin"
                             id="logout"
                             className="admin-nav"
                             onClick={() => handleLogout()}
@@ -81,7 +81,7 @@ function AdminLayout() {
                     </>
                 ) : (
                     <NavLink
-                        to="/admin/login"
+                        to="/admin"
                         id="sign-in"
                         className="admin-nav"
                     >
@@ -113,7 +113,7 @@ function AdminLayout() {
 
                 {/* logout button */}
                 {user ? (
-                    <NavLink to="/admin/login" onClick={() => handleLogout()}>
+                    <NavLink to="/admin" onClick={() => handleLogout()}>
                         <FontAwesomeIcon
                             icon={faArrowRightFromBracket}
                             className="mobile-icon"
