@@ -63,11 +63,31 @@ function AdminLayout() {
         <>
             {/* desktop layout */}
             <header className="desktop-nav">
+                {/* company logo */}
                 <Logo />
-                <NavLinks />
-                <NavLink id="logout" className={"admin-nav"}>
-                    Logout
-                </NavLink>
+                {/* show nav links & logout if there is a user logged in,
+                    show only a login button if there is no user logged in */}
+                {user ? (
+                    <>
+                        <NavLinks />
+                        <NavLink
+                            to="/admin/login"
+                            id="logout"
+                            className="admin-nav"
+                            onClick={() => handleLogout()}
+                        >
+                            Logout
+                        </NavLink>
+                    </>
+                ) : (
+                    <NavLink
+                        to="/admin/login"
+                        id="sign-in"
+                        className="admin-nav"
+                    >
+                        Log In
+                    </NavLink>
+                )}
             </header>
 
             {/* mobile layout */}
@@ -100,7 +120,7 @@ function AdminLayout() {
                         />
                     </NavLink>
                 ) : (
-                    <NavLink to="/admin/login">
+                    <NavLink to="/admin">
                         <FontAwesomeIcon
                             icon={faRightToBracket}
                             className="mobile-icon"
