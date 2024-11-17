@@ -30,8 +30,8 @@ const router = createBrowserRouter(
                 <Route path="quote" element={<Quote />} />
             </Route>
             <Route path="admin" element={<AdminLayout />}>
-                <Route path="/admin" element={<AdminHome />} />
-                <Route path="login" element={<AdminLogin />} />
+                <Route path="/admin" element={<AdminLogin />} />
+                <Route path="home" element={<AdminHome />} />
                 <Route path="portfolio" element={<AdminPortfolio />} />
                 <Route path="about" element={<AdminAbout />} />
             </Route>

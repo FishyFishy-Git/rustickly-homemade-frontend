@@ -1,6 +1,7 @@
 import "./adminLayout.css";
 
-import logo from "../assets/Logo";
+
+import Logo from '../assets/Logo'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBars,
@@ -27,29 +28,29 @@ function AdminLayout() {
     const handleLogout = () => {
         setUser(null);
         document.cookie =
-            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/admin;";
+            "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     };
 
     const NavLinks = () => {
         return (
             <div className="admin-links">
                 <NavLink
-                    to="/admin/"
-                    className={"admin-nav"}
+                    to="/admin/home"
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     Home
                 </NavLink>
                 <NavLink
                     to="/admin/about"
-                    className={"admin-nav"}
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     About
                 </NavLink>
                 <NavLink
                     to="/admin/portfolio"
-                    className={"admin-nav"}
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     Portfolio
@@ -63,21 +64,16 @@ function AdminLayout() {
             {/* desktop layout */}
             <header className="desktop-nav">
                 {/* company logo */}
-                <img
-                    src={logo}
-                    alt="Rustickly Homemade's logo"
-                    id="admin-logo"
-                />
-
+                <Logo />
                 {/* show nav links & logout if there is a user logged in,
                     show only a login button if there is no user logged in */}
                 {user ? (
                     <>
                         <NavLinks />
                         <NavLink
-                            to="/admin/login"
+                            to="/admin"
                             id="logout"
-                            className="admin-nav"
+                            className="admin-nav m-plus-rounded-1c-regular"
                             onClick={() => handleLogout()}
                         >
                             Logout
@@ -85,9 +81,9 @@ function AdminLayout() {
                     </>
                 ) : (
                     <NavLink
-                        to="/admin/login"
+                        to="/admin"
                         id="sign-in"
-                        className="admin-nav"
+                        className="admin-nav m-plus-rounded-1c-regular"
                     >
                         Log In
                     </NavLink>
@@ -113,22 +109,18 @@ function AdminLayout() {
                     ))}
 
                 {/* company logo */}
-                <img
-                    src={logo}
-                    alt="Rustickly Homemade's logo"
-                    id="admin-logo"
-                />
+                <Logo />
 
                 {/* logout button */}
                 {user ? (
-                    <NavLink to="/admin/login" onClick={() => handleLogout()}>
+                    <NavLink to="/admin" onClick={() => handleLogout()}>
                         <FontAwesomeIcon
                             icon={faArrowRightFromBracket}
                             className="mobile-icon"
                         />
                     </NavLink>
                 ) : (
-                    <NavLink to="/admin/login">
+                    <NavLink to="/admin">
                         <FontAwesomeIcon
                             icon={faRightToBracket}
                             className="mobile-icon"

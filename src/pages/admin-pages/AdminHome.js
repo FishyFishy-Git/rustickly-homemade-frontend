@@ -11,7 +11,7 @@ function AdminAbout() {
     } else {
         return (
             <div className="content-container">
-                <h1 className="editor-title">Homepage Editor</h1>
+                <h1 className="editor-title m-plus-rounded-1c-regular">Homepage Editor</h1>
                 <EditorWindow page={"home"} />
             </div>
         );
