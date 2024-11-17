@@ -110,7 +110,7 @@ a {
 .content-block {
     background-color: #f9f8eb;
     border: 5px solid #6C91C2;
-    color: #230C0F;
+    color: #0D3B66;
     padding: 20px;
     border-radius: 15px;
     grid-row: 2/span 5;
@@ -158,6 +158,31 @@ a {
     font-weight: 400;
     font-style: normal;
   }
-  
+   
+  @media (max-width: 1200px) {
+    .main-container {
+        height: 80vw;
+    }
+    .navigation-bar{
+        display: none;
+    }
+    .content-block{
+        grid-column: 1/span 7 ;
+    }
+    .title-landing {
+        grid-column: 1/span 7;
+    }
+
+  }
+
+  @media (max-width: 800px) {
+    .main-container {
+        height: 75vw;
+    }
+    #home-landing {
+        height: auto;
+        font-size: 2.5rem;
+    }
+  }
 
   
