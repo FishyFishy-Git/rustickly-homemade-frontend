@@ -7,6 +7,7 @@ import { AdminContext } from "../../contexts/AdminContext";
 function AdminLogin() {
     // set useState variables
     const [errorMessage, setErrorMessage] = useState("");
+    const [error, isError] = useState(false)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { setUser } = useContext(AdminContext);
@@ -33,6 +34,7 @@ function AdminLogin() {
             document.getElementById("password-input").value = "";
             // display error message for user
             setErrorMessage(data.message);
+            isError(true)
         }
     };
 
@@ -65,7 +67,7 @@ function AdminLogin() {
         <main className="admin-main">
             <div className="auth-inputs">
                 <div className="email">
-                    <label htmlFor="email-input" className="input-text">
+                    <label htmlFor="email-input" className="input-text m-plus-rounded-1c-regular">
                         Email:
                     </label>
                     <input
@@ -77,7 +79,7 @@ function AdminLogin() {
                     />
                 </div>
                 <div className="password">
-                    <label htmlFor="password-input" className="input-text">
+                    <label htmlFor="password-input" className="input-text m-plus-rounded-1c-regular">
                         Password:
                     </label>
                     <input
@@ -93,10 +95,10 @@ function AdminLogin() {
                         }}
                     />
                 </div>
-                <button className="auth-button bubble" onClick={handleLogin}>
+                <button className="auth-button bubble m-plus-rounded-1c-regular" onClick={handleLogin}>
                     Log In
                 </button>
-                <p className="auth-warning">{errorMessage}</p>
+                {error && <div className="auth-warning m-plus-rounded-1c-regular">{errorMessage}</div>}
             </div>
         </main>
     );

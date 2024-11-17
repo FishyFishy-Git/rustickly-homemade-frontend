@@ -30,6 +30,13 @@
   gap: 2rem;
 }
 
+@font-face{
+  font-family: Give You Glory;
+  font-family: MPLUSRounded1c;
+  src: url(../fonts/GiveYouGlory-Regular.ttf);
+  src: url(../fonts/MPLUSRounded1c-Regular.ttf);
+}
+
 /* each specific navlink */
 .admin-nav {
   padding: 5px 10px;
@@ -37,9 +44,10 @@
   color: var(--text-color);
   font-size: 1.5rem;
   font-weight: 500;
+  
 
   background-color: var(--background-color);
-  border-radius: 5px;
+  border-radius: 10px;
   border: 2px solid var(--text-color);
 }
 

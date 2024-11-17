@@ -36,21 +36,21 @@ function AdminLayout() {
             <div className="admin-links">
                 <NavLink
                     to="/admin/home"
-                    className={"admin-nav"}
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     Home
                 </NavLink>
                 <NavLink
                     to="/admin/about"
-                    className={"admin-nav"}
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     About
                 </NavLink>
                 <NavLink
                     to="/admin/portfolio"
-                    className={"admin-nav"}
+                    className={"admin-nav m-plus-rounded-1c-regular"}
                     onClick={() => closeMenu()}
                 >
                     Portfolio
@@ -73,7 +73,7 @@ function AdminLayout() {
                         <NavLink
                             to="/admin"
                             id="logout"
-                            className="admin-nav"
+                            className="admin-nav m-plus-rounded-1c-regular"
                             onClick={() => handleLogout()}
                         >
                             Logout
@@ -83,7 +83,7 @@ function AdminLayout() {
                     <NavLink
                         to="/admin"
                         id="sign-in"
-                        className="admin-nav"
+                        className="admin-nav m-plus-rounded-1c-regular"
                     >
                         Log In
                     </NavLink>
