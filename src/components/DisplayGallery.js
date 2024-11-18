@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 export default function DisplayFunction() {
   const containerRef = useRef(null);
   const cloudName = process.env.REACT_APP_CLOUD_NAME;
+  console.log(cloudName);
 
   useEffect(() => {
     if (window && containerRef.current) {
@@ -11,7 +12,7 @@ export default function DisplayFunction() {
           .galleryWidget({
             container: containerRef.current,
             cloudName: cloudName,
-            mediaAssets: [{ tag: "portfolio" }],
+            mediaAssets: [{ tags: "portfolio" }],
             aspectRatio: "4:3",
             transformation: {
               crop: "fill",

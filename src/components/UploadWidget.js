@@ -10,6 +10,7 @@ export default function UploadWidget() {
   useEffect(() => {
     if (window.cloudinary) {
       cloudinaryRef.current = window.cloudinary;
+      console.log(cloudinaryRef.current);
       widgetHandler.current = cloudinaryRef.current.createUploadWidget(
         {
           cloudName,
@@ -20,9 +21,9 @@ export default function UploadWidget() {
         (error, result) => {
           if (error) {
             console.error("Upload Widget Error:", error);
-          }
-          if (result.event === "success") {
+          } else if (result.event === "success") {
             console.log("Upload successful:", result.info);
+            console.log("Assigned Tags:", result.info.tags); // Check if tags were assigned
           }
         }
       );

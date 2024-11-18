@@ -1,6 +1,6 @@
 import React from "react";
 import UploadWidget from "../../components/UploadWidget";
-import DisplayFunction from "../../components/DisplayGallery";
+import DisplayFunction from "../../components/AdminDisplayGallery";
 import "./adminPortfolio.css";
 
 function AdminPortfolio() {
