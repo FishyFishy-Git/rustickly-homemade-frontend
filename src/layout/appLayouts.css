@@ -1,0 +1,108 @@
+.client-desktop-nav {
+    display: none;
+}
+.client-mobile-nav {
+    display: none
+}
+
+@media (max-width: 1600px) {
+    /* container for navbar */
+    .client-desktop-nav {
+        /* flexbox parent styling */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* general styling */
+        height: 10vh;
+        padding: 0 1vw;
+        font-size: 1.1rem;
+        background-color: var(--border-color);
+    }
+
+    /* container for navlinks */
+    .client-links {
+        /* flexbox parent styling */
+        display: flex;
+        gap: 1vw;
+    }
+
+    /* individual navlinks */
+    .client-nav {
+        /* general styling */
+        font-weight: 500;
+    }
+    .client-nav:hover {
+        /* general styling */
+        color: var(--background-color);
+        border-bottom: 2px solid var(--background-color);
+    }
+
+    /* active navlink */
+    .active {
+        /* general styling */
+        font-weight: 600;
+        border-bottom: 2px solid var(--text-color);
+    }
+    .active:hover {
+        /* general styling */
+        color: var(--text-color);
+        border-bottom: 2px solid var(--text-color);
+    }
+  }
+
+  @media (max-width: 800px) {
+    /* container for mobile navbar */
+    .client-mobile-nav {
+        /* flexbox parent styling */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* general styling */
+        min-height: 15vh;
+        height: min-content;
+
+        background-color: var(--border-color);
+    }
+
+    /* hamburger & close buttons */
+    .menu-icon {
+        /* positioning */
+        position: absolute;
+        right: 3%;
+
+        /* general styling */
+        height: 3rem;
+        width: auto;
+        color: var(--text-color);
+    }
+
+    .client-links {
+        /* positioning */
+        position: absolute;
+        top: 15vh;
+
+        /* flexbox parent styling */
+        flex-flow: column;
+        flex-direction: flex start;
+        align-items: center;
+        gap: 1.5vh;
+
+        /* general styling */
+        width: 100%;
+        padding-bottom: 2vh;
+        font-size: 1.5rem;
+        background-color: var(--border-color);
+    }
+    .client-nav:hover {
+        /* general styling */
+        color: var(--text-color);
+        border: none;
+    }
+    .active {
+        /* general styling */
+        opacity: 50%;
+        border: none;
+    }
+  }
