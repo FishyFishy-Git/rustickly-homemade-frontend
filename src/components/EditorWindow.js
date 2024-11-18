@@ -68,16 +68,14 @@ function EditorWindow({ page }) {
     return (
         // load editor if content is fetch is successful
         (mount && (
-            <div className="editor">
+            <div className="editor m-plus-rounded-1c-regular">
                 <EditorProvider
                     slotBefore={<EditorMenuBar />}
                     slotAfter={<EditorChanges content={content} page={page} setContent={setContent} />}
                     extensions={extensions}
                     content={editorContent}
-                    className={'test-class'}
                     onCreate={({ editor }) => {
                         setContent(editor.getJSON())
-                        console.log('the test', editor.getJSON())
                         document.getElementById('save').disabled = true
                         document.getElementById("cancel").disabled = true
                     }}
@@ -103,9 +101,9 @@ function EditorWindow({ page }) {
             </div>
         ))
         // load error message if server doesn't respond after 10 seconds
-        || (loadError && (<div className="editor">Error accessing server, please refresh.</div>))
+        || (loadError && (<div className="editor-error m-plus-rounded-1c-regular">Error accessing server, please refresh.</div>))
         // loading message 
-        || <div className="editor">Loading editor...</div>
+        || <div className="editor-load m-plus-rounded-1c-regular">Loading editor...</div>
 
     )
 }

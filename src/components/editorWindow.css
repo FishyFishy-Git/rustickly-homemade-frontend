@@ -1,5 +1,6 @@
 /* variables for the color pallet (to be inserted later) */
 :root {
+  background-color: #0d3b66;
   --background-color: #ede9da;
   --text-color: #0d3b66;
   --border-color: #6c91c2;
@@ -15,7 +16,9 @@
 
   /* general styling */
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
+  height: max-content;
+
 
   background-color: var(--background-color);
   color: var(--text-color);
@@ -23,49 +26,94 @@
 
 /* title bar */
 .editor-title {
+  /* flexbox styling */
+  display: flex;
+  align-items: center;
+
   /* general styling */
   text-align: center;
-  height: 4;
-  font-size: 2em;
+  height: max-content;
+  font-size: 2rem;
   font-weight: 600;
   margin: 0;
 }
 
 /* parent container for whole editor (menu / editor window / save&cancel buttons */
 .editor {
-  /* flexbox styling */
+  /* flexbox child styling */
+  flex-grow: 2;
+
+  /* flexbox parent styling */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+/* message for loading editor */
+.editor-load {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-style: italic;
+
+  margin-top: 5vh;
+  padding: 5px;
+
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+}
+
+/* message for editor error */
+.editor-error {
+  color: var(--high-contrast-color);
+  font-size: 1.2rem;
+  font-style: italic;
+
+  margin-top: 5vh;
+  padding: 5px;
+
+  border: 2px solid var(--high-contrast-color);
+  border-radius: 10px;
+}
+/* container div for the tiptap editor */
+.editor div {
+  /* flexbox child styling */
+  flex-grow: 2;
+
+  /* flexbox parent styling */
+  display: flex;
+  flex-flow: column nowrap;
 
   /* general styling */
-  height: 86vh;
+  max-height: 75vh;
 }
 
 /* menu bar */
-.format-bar {
-  /* becoming it's own flex parent container */
+.editor .format-bar {
+  /* flexbox child styling */
+  flex-grow: 0;
+
+  /* flexbox parent styling */
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   gap: 0.5rem;
-
+  
   /* general styling */
-  /* height: 3vh; */
-
+  height: min-content;
   width: 90vw;
   max-width: 70rem;
 
   padding: 5px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-
+  
   border: 3px solid var(--text-color);
   border-bottom: none;
   border-radius: 5px 5px 0 0;
   background-color: var(--border-color);
 }
 
+/* breaks between format button groups */
 .vertical-break {
   font-weight: 500;
 }
@@ -79,7 +127,6 @@
   border: 2px solid var(--text-color);
   font-weight: 600;
 }
-
 .format-button:hover {
   background-color: var(--text-color);
 }
@@ -94,11 +141,8 @@
 
 /* editor window */
 .tiptap {
-  /* flex-grow: 2; */
   /* general styling */
-  height: 77vh;
-  max-height: 77vh;
-
+  min-height: 100%;
   width: 90vw;
   max-width: 70rem;
   overflow: auto;
@@ -115,16 +159,19 @@
 }
 
 /* container div for cancel & save buttons */
-.change-buttons {
-  /* flexbox styling */
+.editor .change-buttons {
+  /* flexbox child styling */
   align-self: flex-end;
+  flex-grow: 0;
 
-  /* becoming it's own flexbox */
+  /* flexbox parent styling */
   display: flex;
+  flex-flow: row nowrap;
   gap: 0.5rem;
 
   /* general styling */
   height: 3vh;
+  min-height: min-content;
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
@@ -155,8 +202,28 @@
 .format-button:disabled,
 #cancel:disabled,
 #save:disabled {
-  color: black;
-  background-color: gray;
-  /* border: none; */
+  color: #212529;
+  background-color: #6c757d;
+  border-color: #212529;
   opacity: 50%;
+}
+
+@media (max-width: 800px) {
+  .content-container {
+    min-height: 83vh;
+    height: min-content;
+  }
+
+  .editor-title {
+    font-size: 1.7rem;
+  }
+  
+  .editor .format-bar {
+    flex-flow: row nowrap;
+    overflow: auto;
+  }
+
+  .editor div {
+    max-height: 60vh;
+  }
 }
