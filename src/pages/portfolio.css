@@ -10,7 +10,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    height: 50vw;
+    height: 95vh;
 }
 
 .logo-header-portfolio {
@@ -85,9 +85,9 @@
     margin: 0;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
     .main-container-portfolio {
-        height: 80vw;
+        height: 85vh;
     }
     .navigation-bar-portfolio{
         display: none;
@@ -103,7 +103,7 @@
 
   @media (max-width: 800px) {
     .main-container-portfolio {
-        height: 75vw;
+        height: 80vh;
     }
     #title-portfolio {
         height: auto;

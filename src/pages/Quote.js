@@ -68,11 +68,6 @@ function Quote() {
           <QuoteHandler className="form" />
         </div>
       </div>
-
-
-      <div className="logo-header">
-        <h1 id="title">Rustically Homemade</h1>
-      </div>
     </>
   );
 }

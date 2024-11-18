@@ -12,12 +12,12 @@ function LandingPage() {
         <NavLink to="/"><Logo id="logo"></Logo></NavLink>
         </section>
         <div id="navlinksLP">
-          <p className="linksLP" id="portfolio">
-            <NavLink className="m-plus-rounded-1c-regular" to="/portfolio">Gallery</NavLink>
-          </p>
-          <hr />
           <p className="linksLP" id="about-us">
             <NavLink className="m-plus-rounded-1c-regular" to="/about">About</NavLink>
+          </p>
+          <hr />
+          <p className="linksLP" id="portfolio">
+            <NavLink className="m-plus-rounded-1c-regular" to="/portfolio">Gallery</NavLink>
           </p>
           <hr />
           <p className="linksLP" id="qoute">

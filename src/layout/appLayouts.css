@@ -52,6 +52,10 @@
   }
 
   @media (max-width: 800px) {
+    .client-desktop-nav {
+        display: none;
+    }
+
     /* container for mobile navbar */
     .client-mobile-nav {
         /* flexbox parent styling */
