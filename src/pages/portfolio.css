@@ -84,3 +84,29 @@
     color:#0D3B66;
     margin: 0;
   }
+
+  @media (max-width: 1200px) {
+    .main-container-portfolio {
+        height: 80vw;
+    }
+    .navigation-bar-portfolio{
+        display: none;
+    }
+    .gallery-container{
+        grid-column: 1/span 7 ;
+    }
+    .logo-header-portfolio {
+        grid-column: 1/span 7;
+    }
+
+  }
+
+  @media (max-width: 800px) {
+    .main-container-portfolio {
+        height: 75vw;
+    }
+    #title-portfolio {
+        height: auto;
+        font-size: 2.5rem;
+    }
+  }
