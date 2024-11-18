@@ -54,12 +54,17 @@
     .socials-nav {
         /* flexbox parent styling */
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: column wrap;
         align-items: center;
         gap: 5px;
 
+        /* general styling */
         color: var(--text-color);
-        width: 15vw;
+    }
+
+    .social-text {
+        /* flexbox child styling */
+        flex-grow: 2;
     }
 
     .social-buttons {
@@ -111,6 +116,7 @@
         flex-flow: column nowrap;
         align-items: center;
         
+        /* general styling */
         width: 100%;
         background-color: var(--border-color);
         padding-bottom: 2vh;
@@ -139,10 +145,10 @@
     }
 
     .socials-nav {
-        /* flex-flow: row ; */
+        /* flexbox parent styling */
         justify-content: center;
-        /* gap: 2rem; */
 
+        /* general styling */
         width: 100%;
     }
   }

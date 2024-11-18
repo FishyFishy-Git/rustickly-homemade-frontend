@@ -54,7 +54,7 @@ function AppLayout() {
     const SocialLinks = () => {
         return (
             <div className="socials-nav">
-                <div>Check out our socials!</div>
+                <div className="social-text">Check out our socials!</div>
                 <div className="social-buttons">
                     <div id="facebook-nav">
                         <NavLink
