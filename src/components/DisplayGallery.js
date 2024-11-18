@@ -12,7 +12,7 @@ export default function DisplayFunction() {
           .galleryWidget({
             container: containerRef.current,
             cloudName: cloudName,
-            mediaAssets: [{ tags: "portfolio" }],
+            mediaAssets: [{ tag: "portfolio" }],
             aspectRatio: "4:3",
             transformation: {
               crop: "fill",
