@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 export default function DisplayFunction() {
   const containerRef = useRef(null);
   const cloudName = process.env.REACT_APP_CLOUD_NAME;
+  console.log(cloudName);
 
   useEffect(() => {
     if (window && containerRef.current) {

@@ -1,9 +1,9 @@
 import "./App.css";
 import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-    RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
 } from "react-router-dom";
 
 // import pages
@@ -19,32 +19,31 @@ import AdminAbout from "./pages/admin-pages/AdminAbout";
 import AdminPortfolio from "./pages/admin-pages/AdminPortfolio";
 import AdminProvider from "./contexts/AdminContext";
 
-
 const router = createBrowserRouter(
-    createRoutesFromElements(
-        <>
-            <Route path="/" element={<AppLayout />}>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="about" element={<About />} />
-                <Route path="portfolio" element={<Portfolio />} />
-                <Route path="quote" element={<Quote />} />
-            </Route>
-            <Route path="admin" element={<AdminLayout />}>
-                <Route path="/admin" element={<AdminLogin />} />
-                <Route path="home" element={<AdminHome />} />
-                <Route path="portfolio" element={<AdminPortfolio />} />
-                <Route path="about" element={<AdminAbout />} />
-            </Route>
-        </>
-    )
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<AppLayout />}>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="about" element={<About />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="quote" element={<Quote />} />
+      </Route>
+      <Route path="admin" element={<AdminLayout />}>
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="home" element={<AdminHome />} />
+        <Route path="portfolio" element={<AdminPortfolio />} />
+        <Route path="about" element={<AdminAbout />} />
+      </Route>
+    </>
+  )
 );
 
 function App() {
-    return (
-        <AdminProvider>
-            <RouterProvider router={router} />
-        </AdminProvider>
-    );
+  return (
+    <AdminProvider>
+      <RouterProvider router={router} />
+    </AdminProvider>
+  );
 }
 
 export default App;

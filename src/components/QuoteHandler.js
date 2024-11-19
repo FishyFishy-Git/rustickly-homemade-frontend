@@ -79,6 +79,7 @@ function QuoteHandler() {
         <input
           className="quote-input"
           type="text"
+          id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
@@ -91,6 +92,7 @@ function QuoteHandler() {
         <input
           className="quote-input"
           type="text"
+          id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -103,6 +105,7 @@ function QuoteHandler() {
         <input
           className="quote-input"
           type="tel"
+          id="number"
           name="number"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           value={formData.email}
@@ -115,6 +118,7 @@ function QuoteHandler() {
         <input
           className="quote-input"
           type="date"
+          id="date"
           name="date"
           value={formData.date}
           min={minDate}
@@ -128,6 +132,7 @@ function QuoteHandler() {
           className="quote-input"
           cols="30"
           rows="12"
+          id="request"
           name="request"
           value={formData.request}
           onChange={handleChange}
