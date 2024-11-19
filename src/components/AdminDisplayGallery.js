@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { MdDelete } from "react-icons/md";
+// import { MdDelete } from "react-icons/md";
 import ReactDOM from "react-dom";
 import "./adminDisplayGallery.css";
 
@@ -75,7 +75,8 @@ export default function DisplayFunction() {
 
               // Add the delete icon
               const deleteIconElement = (
-                <MdDelete size={24} color="red" border-color="black" />
+                // <MdDelete size={24} color="red" border-color="black" />
+                'something'
               );
 
               // Render the React icon into the container
