@@ -20,7 +20,7 @@ function Portfolio() {
             <NavLink className="m-plus-rounded-1c-regular" to="/about">About</NavLink>
           </p>
           <hr />
-          <p className="linksP" id="qoute">
+          <p className="linksP" id="quote">
             <NavLink className="m-plus-rounded-1c-regular" to="/quote">Request a Quote!</NavLink>
           </p>
         </div>

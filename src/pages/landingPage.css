@@ -1,9 +1,5 @@
 /* this is the styling for the landing page */
 
-header {
-    display: none;
-}
-
 #logo-grid {
     grid-row: 1/ span 3;
     margin-top: 50px;
@@ -38,7 +34,7 @@ hr {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    height: 50vw;
+    height: 95vh;
 }
 
 .navigation-bar {
@@ -63,11 +59,6 @@ hr {
 .linksLP {
     font-size: 1.8rem;
 }
-
-/* for use later currently no ideas*/
-/*.linksLP:hover {
-background-color: aqua;
-}*/
 
 a {
     text-decoration: none;
@@ -159,9 +150,9 @@ a {
     font-style: normal;
   }
    
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
     .main-container {
-        height: 80vw;
+        height: 85vh;
     }
     .navigation-bar{
         display: none;
@@ -172,12 +163,11 @@ a {
     .title-landing {
         grid-column: 1/span 7;
     }
-
   }
 
   @media (max-width: 800px) {
     .main-container {
-        height: 75vw;
+        height: 80vh;
     }
     #home-landing {
         height: auto;

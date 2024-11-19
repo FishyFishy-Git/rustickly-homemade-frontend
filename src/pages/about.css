@@ -15,7 +15,7 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    height: 50vw;
+    height: 95vh;
 }
 
 .navigation-bar-about {
@@ -83,10 +83,10 @@ display:flex;
 justify-content: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
     
-    .main-container-about {
-        height: 80vw;
+    .main-Container-about {
+        max-height: 85vh;
     }
 
     .navigation-bar-about{
@@ -104,9 +104,8 @@ justify-content: center;
   }
 
   @media (max-width: 800px) {
-
-    .main-container-about {
-        height: 75vw;
+    .main-Container-about {
+        height: 80vh;
     }
 
     #title-text{
