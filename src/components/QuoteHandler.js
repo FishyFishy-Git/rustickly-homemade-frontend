@@ -25,7 +25,7 @@ function QuoteHandler() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceID = "service_fol8n8k"; //IDs needed from emailjs
+    const serviceID = "service_u37ptji"; //IDs needed from emailjs
     const templateID = "template_wuvtnak";
     const PublicKey = "62gV_oghdNKKdlXsx";
 
@@ -34,7 +34,7 @@ function QuoteHandler() {
       from_name: formData.name,
       from_email: formData.email,
       from_number: formData.number,
-      to_name: "Subai",
+      to_name: "Su Bai",
       date: formData.date,
       request: formData.request,
     };
@@ -108,7 +108,7 @@ function QuoteHandler() {
           id="number"
           name="number"
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          value={formData.email}
+          value={formData.number}
           onChange={handleChange}
           placeholder="Ex:123-123-1234"
         />

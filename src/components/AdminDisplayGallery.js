@@ -1,7 +1,9 @@
 import { useRef, useEffect, useState } from "react";
-import { MdDelete } from "react-icons/md";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 import "./adminDisplayGallery.css";
+import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 
 export default function DisplayFunction() {
   const containerRef = useRef(null);
@@ -75,7 +77,7 @@ export default function DisplayFunction() {
 
               // Add the delete icon
               const deleteIconElement = (
-                <MdDelete size={24} color="red" border-color="black" />
+                <FontAwesomeIcon icon={faTrashCan} size={24} color="red" />
               );
 
               // Render the React icon into the container
