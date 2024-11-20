@@ -13,7 +13,11 @@
     padding: 5vh 5vw;
   }
 
-
+.no-auth {
+    color: var(--high-contrast-color);
+    font-size: 1.3rem;
+    margin: 5vh;
+}
 
 .upload-widget{
     background-color: #536958;
