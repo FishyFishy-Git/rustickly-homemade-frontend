@@ -1,13 +1,16 @@
-:root .portfolio-container{
-    margin-top: 10%; /* Adjust value as needed */
-}
-
 .portfolio-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
+
+    height: max-content;
+    min-height: 90vh;
+
+    background-color: var(--background-color);
+    
+    padding: 5vh 5vw;
   }
 
 
