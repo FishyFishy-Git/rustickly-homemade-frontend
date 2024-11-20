@@ -68,7 +68,7 @@
 .gallery-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
     height: 100%;
@@ -92,9 +92,6 @@
     .navigation-bar-portfolio{
         display: none;
     }
-    .gallery-container{
-        grid-column: 1/span 7 ;
-    }
     .logo-header-portfolio {
         grid-column: 1/span 7;
     }
@@ -104,6 +101,9 @@
   @media (max-width: 800px) {
     .main-container-portfolio {
         height: 80vh;
+    }
+    .gallery-container {
+        justify-content: flex-start;
     }
     #title-portfolio {
         height: auto;

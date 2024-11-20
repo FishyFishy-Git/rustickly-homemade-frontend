@@ -7,7 +7,6 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 >>>>>>> ffea5414aa6d52a32e7a8ca72e88c0e409077250
 import ReactDOM from "react-dom";
 import "./adminDisplayGallery.css";
-import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 
 export default function DisplayFunction() {
   const containerRef = useRef(null);
@@ -55,6 +54,34 @@ export default function DisplayFunction() {
             spacing: 4,
             columns: 4,
           },
+          zoomProps: {
+            trigger: "click",
+          },
+          carouselStyle: "thumbnails", // default value: included for clarity
+          carouselLocation: "left", // default value: included for clarity
+          viewportBreakpoints: [
+            {
+              breakpoint: 1600,
+              displayProps: {
+                columns: 4,
+              },
+              carouselStyle: "none",
+            },
+            {
+              breakpoint: 1200,
+              displayProps: {
+                columns: 2,
+              },
+              carouselStyle: "none",
+            },
+            {
+              breakpoint: 800,
+              displayProps: {
+                columns: 1,
+              },
+              carouselStyle: "none",
+            },
+          ],
         });
 
         galleryWidget.render().then(() => {
@@ -130,7 +157,7 @@ export default function DisplayFunction() {
     <div
       className="image-gallery"
       ref={containerRef}
-      style={{ width: "1080px", height: "1080px" }}
+      style={{ width: "80vw" }}
     ></div>
   );
 }

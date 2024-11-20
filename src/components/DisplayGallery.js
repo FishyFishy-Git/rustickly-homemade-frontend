@@ -23,6 +23,35 @@ export default function DisplayFunction() {
               spacing: 4,
               columns: 4,
             },
+            zoomProps: {
+              type: "popup",
+              trigger: "click",
+            },
+            carouselStyle: "thumbnails", // default value: included for clarity
+            carouselLocation: "left", // default value: included for clarity
+            viewportBreakpoints: [
+              {
+                breakpoint: 1600,
+                displayProps: {
+                  columns: 4,
+                },
+                carouselStyle: "none",
+              },
+              {
+                breakpoint: 1200,
+                displayProps: {
+                  columns: 2,
+                },
+                carouselStyle: "none",
+              },
+              {
+                breakpoint: 800,
+                displayProps: {
+                  columns: 1,
+                },
+                carouselStyle: "none",
+              },
+            ],
           })
           .render();
         console.log(window.cloudinary);
@@ -34,6 +63,11 @@ export default function DisplayFunction() {
     }
   }, []);
   return (
-    <div ref={containerRef} style={{ width: "1080px", height: "1080px" }}></div>
+    <>
+      <div
+        ref={containerRef}
+        style={{ width: "80vw", maxWidth: "70rem" }}
+      ></div>
+    </>
   );
 }

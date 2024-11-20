@@ -1,13 +1,16 @@
-:root .portfolio-container{
-    margin-top: 10%; /* Adjust value as needed */
-}
-
 .portfolio-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
+
+    height: max-content;
+    min-height: 90vh;
+
+    background-color: var(--background-color);
+    
+    padding: 5vh 5vw;
   }
 
 
@@ -15,7 +18,9 @@
 .upload-widget{
     background-color: #536958;
     width: 10vw;
-    height: 10vh;
+    min-width: min-content;
+    height: 5vh;
+    min-height: min-content;;
     color: white;
     border: none;
     border-radius: 4px;
