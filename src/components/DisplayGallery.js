@@ -19,10 +19,25 @@ export default function DisplayFunction() {
               gravity: "auto", // Centering the crop if needed
             },
             displayProps: {
-              mode: "expanded",
-              spacing: 4,
-              columns: 4,
+              mode: "classic",
+              //   spacing: 4,
+              //   columns: 4,
             },
+            carouselStyle: "thumbnails", // default value: included for clarity
+            carouselLocation: "left", // default value: included for clarity
+            viewportBreakpoints: [
+              {
+                breakpoint: 600,
+                carouselStyle: "thumbnails",
+                carouselLocation: "bottom",
+              },
+              {
+                breakpoint: 300,
+                carouselStyle: "indicators",
+                carouselLocation: "bottom",
+                navigation: "always",
+              },
+            ],
           })
           .render();
         console.log(window.cloudinary);
@@ -34,6 +49,11 @@ export default function DisplayFunction() {
     }
   }, []);
   return (
-    <div ref={containerRef} style={{ width: "1080px", height: "1080px" }}></div>
+    <>
+      <div
+        ref={containerRef}
+        style={{ width: "80vw", maxWidth: "45rem" }}
+      ></div>
+    </>
   );
 }

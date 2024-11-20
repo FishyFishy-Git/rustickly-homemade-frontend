@@ -15,7 +15,9 @@
 .upload-widget{
     background-color: #536958;
     width: 10vw;
-    height: 10vh;
+    min-width: min-content;
+    height: 5vh;
+    min-height: min-content;;
     color: white;
     border: none;
     border-radius: 4px;

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import ReactDOM from "react-dom";
 import "./adminDisplayGallery.css";
-import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 
 export default function DisplayFunction() {
   const containerRef = useRef(null);
@@ -121,7 +120,7 @@ export default function DisplayFunction() {
     <div
       className="image-gallery"
       ref={containerRef}
-      style={{ width: "1080px", height: "1080px" }}
+      style={{ width: "80vw", maxWidth: "45rem", minWidth: "20px" }}
     ></div>
   );
 }
