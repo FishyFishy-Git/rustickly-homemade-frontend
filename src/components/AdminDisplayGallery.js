@@ -50,6 +50,34 @@ export default function DisplayFunction() {
             spacing: 4,
             columns: 4,
           },
+          zoomProps: {
+            trigger: "click",
+          },
+          carouselStyle: "thumbnails", // default value: included for clarity
+          carouselLocation: "left", // default value: included for clarity
+          viewportBreakpoints: [
+            {
+              breakpoint: 1600,
+              displayProps: {
+                columns: 4,
+              },
+              carouselStyle: "none",
+            },
+            {
+              breakpoint: 1200,
+              displayProps: {
+                columns: 2,
+              },
+              carouselStyle: "none",
+            },
+            {
+              breakpoint: 800,
+              displayProps: {
+                columns: 1,
+              },
+              carouselStyle: "none",
+            },
+          ],
         });
 
         galleryWidget.render().then(() => {
@@ -120,7 +148,7 @@ export default function DisplayFunction() {
     <div
       className="image-gallery"
       ref={containerRef}
-      style={{ width: "80vw", maxWidth: "45rem", minWidth: "20px" }}
+      style={{ width: "80vw" }}
     ></div>
   );
 }

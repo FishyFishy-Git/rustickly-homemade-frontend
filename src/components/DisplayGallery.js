@@ -25,7 +25,7 @@ export default function DisplayFunction() {
             },
             zoomProps: {
               type: "popup",
-              trigger: "click"
+              trigger: "click",
             },
             carouselStyle: "thumbnails", // default value: included for clarity
             carouselLocation: "left", // default value: included for clarity
@@ -33,19 +33,25 @@ export default function DisplayFunction() {
               {
                 breakpoint: 1600,
                 displayProps: {
-                  columns: 2
+                  columns: 4,
                 },
-                carouselStyle: "none"
+                carouselStyle: "none",
+              },
+              {
+                breakpoint: 1200,
+                displayProps: {
+                  columns: 2,
+                },
+                carouselStyle: "none",
               },
               {
                 breakpoint: 800,
                 displayProps: {
-                  columns: 1
+                  columns: 1,
                 },
-                carouselStyle: "none"
+                carouselStyle: "none",
               },
             ],
-
           })
           .render();
         console.log(window.cloudinary);
