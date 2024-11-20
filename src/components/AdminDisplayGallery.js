@@ -1,10 +1,6 @@
 import { useRef, useEffect, useState } from "react";
-<<<<<<< HEAD
-// import { MdDelete } from "react-icons/md";
-=======
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
->>>>>>> ffea5414aa6d52a32e7a8ca72e88c0e409077250
 import ReactDOM from "react-dom";
 import "./adminDisplayGallery.css";
 
