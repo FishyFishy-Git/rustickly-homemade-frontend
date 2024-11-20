@@ -104,12 +104,7 @@ export default function DisplayFunction() {
 
               // Add the delete icon
               const deleteIconElement = (
-<<<<<<< HEAD
-                // <MdDelete size={24} color="red" border-color="black" />
-                'something'
-=======
                 <FontAwesomeIcon icon={faTrashCan} size={24} color="red" />
->>>>>>> ffea5414aa6d52a32e7a8ca72e88c0e409077250
               );
 
               // Render the React icon into the container
