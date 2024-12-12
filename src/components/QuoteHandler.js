@@ -25,9 +25,9 @@ function QuoteHandler() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceID = "service_u37ptji"; //IDs needed from emailjs
-    const templateID = "template_wuvtnak";
-    const PublicKey = "62gV_oghdNKKdlXsx";
+    const serviceID = process.env.REACT_APP_SERVICE_ID; //IDs needed from emailjs
+    const templateID = process.env.REACT_APP_TEMPLATE_ID;
+    const PublicKey = process.env.REACT_APP_PUBLIC_KEY;
 
     const templateParams = {
       //holds all the params that will hold information to be sent in email
